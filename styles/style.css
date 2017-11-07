@@ -1,0 +1,124 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'PT Serif', "Arial", sans-serif;
+    font-size: 100%;
+    line-height: 1.2;
+}
+
+body {
+    /*
+    max-width: 1400px;
+    margin: 0 auto;
+    */
+    background-color: white;
+    /*padding: 0 20px 20px 20px;*/
+    /*border: 3px solid black;*/
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    padding: 5px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border: 0; /* prevent IE9 (and earlier) from displaying a border around the edges */
+}
+
+/* Style the header */
+#header {
+    background-color: #466995;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Style the footer */
+#footer {
+    background-color: #466995;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style the top navigation bar, unordered list */
+.topnav ul {
+    list-style-type: none;
+    margin: 0; /* 0 auto */
+    padding: 0;
+    overflow: hidden;
+    background-color: #DBE9EE;
+}
+
+/* Style the top navigation list element */
+.topnav li {
+    float: left;
+}
+
+/* Style the top navigation links */
+.topnav li a {
+    display: inline-block; /* block */
+    color: #466995;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the color on hover */
+.topnav a:hover {
+    background-color: #466995;
+    color: white;
+}
+
+/* Change the color of active page */
+.topnav a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+/* Left column */
+.column.left {
+    width: 15%;
+}
+
+/* Middle column */
+.column.middle {
+    width: 70%;
+}
+
+/* Right column */
+.column.right {
+    width: 15%;
+    text-align: center;
+}
+
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other
+    instead of next to each other */
+@media (max-width:600px) {
+    .column.left, .column.middle, .column.right {
+        width: 100%;
+    }
+}
