@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <title>James Bond | Todd Brentlinger's Website</title>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+    <!--
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif" />
+    -->
+    <meta name="author" content="Todd Brentlinger" />
+    <!-- Attribute name="description" is used for search engines. Include
+        keywords relating to the webpage -->
+    <meta name="description" content="Todd Brentlinger's rankings of James Bond" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+        #bond {
+            text-align: center;
+            /*border: 15px solid #267257;*/
+        }
+
+        #bond ol {
+            width: 30%;
+            min-width: 18.75em; /* 18.75em*16px=300px */
+            margin: 0 auto;
+            text-align: left;
+            /*list-style-position: inside;*/
+            box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.4);
+            border-left: 5px solid #267257;
+            background-color: #F2F2F2;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 0.7em;
+        }
+
+        th {
+            background-color: #267257;
+            color: #F2F2F2;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #F2F2F2;
+        }
+
+        tr:nth-child(odd) td {
+            background-color: #DBE9EE;
+        }
+
+        /* no element in table */
+        table tr td.none {
+            background-color: gray;
+        }
+
+        caption {
+            padding-bottom: 0.5em;
+        }
+
+        thead tr td:first-child {
+            /*border: none;*/
+            background-color: #267257;
+            border-top-left-radius: 3em;
+        }
+
+        .auto-overflow-x{
+            overflow-x: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Bond. James Bond.</h1>
+    </header>
+
+    <!-- Top Navigation -->
+    <nav id="topnav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../professional/professional.html">Professional</a></li>
+            <li><a href="../personal/personal.html">Personal</a></li>
+            <li><a href="#">Social</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a class="active-page" href="../bond/bond-rank.html">James Bond</a></li>
+            <li><a href="../pages/javascript-examples.html">JavaScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="row">
+
+        <!-- Left Column -->
+        <nav id="sidenav" class="column left">
+            <!--
+            <h2>Side Nav</h2>
+            -->
+            <ul>
+                <li><a href="#films">Films Rank</a></li>
+                <li><a href="#connery">Sean Connery</a></li>
+                <li><a href="#lazenby">George Lazenby</a></li>
+                <li><a href="#moore">Roger Moore</a></li>
+                <li><a href="#dalton">Timothy Dalton</a></li>
+                <li><a href="#brosnan">Pierce Brosnan</a></li>
+                <li><a href="#craig">Daniel Craig</a></li>
+                <li><a href="#games">Video Games</a></li>
+                <li><a href="#bond-table">Bond Table</a></li>
+                <li><a href="#bond-girl">Bond Girl</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Middle Column -->
+        <div id="bond" class="column middle">
+
+            <picture class="image-container">
+                <source media="(max-width: 399px)" srcset="../images/james-bond-silhouette-1.jpg" />
+                <img src="../images/james_bond_backdrop_opinion.jpg" alt="James Bond gun barrel"
+                     width="400" height="250"/>
+            </picture>
+
+            <h2 id="films">James Bond Films Rank:</h2>
+
+            <ol>
+                <li>Goldfinger</li>
+                <li>From Russia With Love</li>
+                <li>GoldenEye</li>
+                <li>Casino Royale</li>
+                <li>The Spy Who Loved Me</li>
+                <li>Dr. No</li>
+                <li>You Only Live Twice</li>
+                <li>On Her Majesty's Secret Service</li>
+                <li>For Your Eyes Only</li>
+                <li>The World Is Not Enough</li>
+                <li>The Living Daylights</li>
+                <li>Skyfall</li>
+                <li>Live and Let Die</li>
+                <li>Thunderball</li>
+                <li>Man With A Golden Gun</li>
+                <li>Octopussy</li>
+                <li>Tomorrow Never Dies</li>
+                <li>License To Kill</li>
+                <li>Moonraker</li>
+                <li>A View To A Kill</li>
+                <li>Spectre</li>
+                <li>Diamonds Are Forever</li>
+                <li>Quantum of Solace</li>
+                <li>Die Another Day</li>
+            </ol>
+
+            <h2 id="connery">Sean Connery:</h2>
+
+            <ol>
+                <li>Goldfinger</li>
+                <li>From Russia With Love</li>
+                <li>Dr. No</li>
+                <li>You Only Live Twice</li>
+                <li>Thunderball</li>
+                <li>Diamonds Are Forever</li>
+            </ol>
+
+            <h2 id="lazenby">George Lazenby:</h2>
+
+            <ol>
+                <li>On Her Majesty's Secret Service</li>
+            </ol>
+
+            <h2 id="moore">Roger Moore:</h2>
+
+            <ol>
+                <li>The Spy Who Loved Me</li>
+                <li>For Your Eyes Only</li>
+                <li>Live and Let Die</li>
+                <li>The Man With The Golden Gun</li>
+                <li>Octopussy</li>
+                <li>Moonraker</li>
+                <li>A View To A Kill</li>
+            </ol>
+
+            <h2 id="dalton">Timothy Dalton:</h2>
+
+            <ol>
+                <li>The Living Daylights</li>
+                <li>License To Kill</li>
+            </ol>
+
+            <h2 id="brosnan">Pierce Brosnan:</h2>
+
+            <ol>
+                <li>GoldenEye</li>
+                <li>The World Is Not Enough</li>
+                <li>Tomorrow Never Dies</li>
+                <li>Die Another Day</li>
+            </ol>
+
+            <h2 id="craig">Daniel Craig:</h2>
+
+            <ol>
+                <li>Casino Royale</li>
+                <li>Skyfall</li>
+                <li>Spectre</li>
+                <li>Quantum of Solace</li>
+            </ol>
+
+            <h2 id="games">Video Games:</h2>
+
+            <ol>
+                <li>Everything or Nothing</li>
+                <li>Nightfire</li>
+                <li>Agent Under Fire</li>
+            </ol>
+
+            <!-- Table -->
+            <h2 id="bond-table">James Bond Table:</h2>
+
+            <div class="auto-overflow-x">
+                <table>
+                    <caption>James Bond Actor/Character Table</caption>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col">James Bond</th>
+                            <th scope="col">Villain</th>
+                            <th scope="col">Henchman</th>
+                            <th scope="col">Bond Girl</th>
+                            <th scope="col">M</th>
+                            <th scope="col">Q</th>
+                            <th scope="col">Moneypenny</th>
+                            <th scope="col">Song</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Dr. No</th>
+                            <td rowspan="5">Sean Connery</td>
+                            <td>Dr. No</td>
+                            <td></td>
+                            <td>Honey Ryder</td>
+                            <td rowspan="11">Bernard Lee</td>
+                            <td>Peter Burton</td>
+                            <td rowspan="14">Lois Maxwell</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">From Russia with Love</th>
+                            <td>Rosa Klebb / Ernst Stavro Blofeld</td>
+                            <td>Red Grant</td>
+                            <td></td>
+                            <td rowspan="6">Desmond Llewelyn</td>
+                            <td>"From Russia With Love"</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Goldfinger</th>
+                            <td>Auric Goldfinger</td>
+                            <td>Oddjob</td>
+                            <td>Pussy Galore</td>
+                            <td>"Goldfinger"</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Thunderball</th>
+                            <td>Emilio Largo /<br />Ernst Stavro Blofeld</td>
+                            <td>Fiona Volpe</td>
+                            <td>Domino</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">You Only Live Twice</th>
+                            <td rowspan="3">Ernst Stavro Blofeld</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">On Her Majesty's Secret Service</th>
+                            <td>George Lazenby</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Diamonds Are Forever</th>
+                            <td>Sean Connery</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Live and Let Die</th>
+                            <td rowspan="7">Roger Moore</td>
+                            <td>Dr. Kananga /<br />Mr. Big</td>
+                            <td></td>
+                            <td></td>
+                            <td class="none"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">The Man with the Golden Gun</th>
+                            <td>Francisco Scaramanga</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="11">Desmond Llewelyn</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">The Spy Who Loved Me</th>
+                            <td>Karl Stromberg</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Moonraker</th>
+                            <td>Hugo Drax</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">For Your Eyes Only</th>
+                            <td>Aristotle Kristatos</td>
+                            <td></td>
+                            <td></td>
+                            <td class="none"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Octopussy</th>
+                            <td>General Orlov /<br />Prince Kamal Khan</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="4">Robert Brown</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">A View To a Kill</th>
+                            <td>Max Zorin</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">The Living Daylights</th>
+                            <td rowspan="2">Timothy Dalton</td>
+                            <td>General Georgi Koskov /<br />Brad Whitaker</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="2">Caroline Bliss</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">License to Kill</th>
+                            <td>Franz Sanchez</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">GoldenEye</th>
+                            <td rowspan="4">Pierce Brosnan</td>
+                            <td>Alec Trevelyan</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="7">Judi Dench</td>
+                            <td rowspan="4">Samantha Bond</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tomorrow Never Dies</th>
+                            <td>Elliot Carver</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">The World Is Not Enough</th>
+                            <td>Elektra King /<br />Renard</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Die Another Day</th>
+                            <td>Gustav Graves /<br />Colonel Moon</td>
+                            <td></td>
+                            <td></td>
+                            <td>John Cleese</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Casino Royale</th>
+                            <td rowspan="5">Daniel Craig</td>
+                            <td>Le Chiffre /<br />Mr. White /<br />Steven Obanno</td>
+                            <td></td>
+                            <td></td>
+                            <td class="none" rowspan="2"></td>
+                            <td class="none" rowspan="2"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Quantum of Solace</th>
+                            <td>Dominic Greene /<br />Mr. White</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Skyfall</th>
+                            <td>Raol Silva</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="3">Ben Whishaw</td>
+                            <td rowspan="3">Naomie Harris</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Spectre</th>
+                            <td>Ernst Stavro Blofeld</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="2">Ralph Fiennes</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Bond 25</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Bond Girl Table -->
+            <h2 id="bond-girl">Bond Girl:</h2>
+
+            <div class="auto-overflow-x">
+                <table>
+                    <caption></caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Film</th>
+                            <th scope="col">Main Bond Girl</th>
+                            <th scope="col">Femme Fatale</th>
+                            <th scope="col">Sacrificial Lamb</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Dr. No</th>
+                            <td>Honey Ryder</td>
+                            <td>Miss Taro</td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">From Russia with Love</th>
+                            <td>Tatiana Romanova</td>
+                            <td>Rosa Klebb</td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Goldfinger</th>
+                            <td>Pussy Galore</td>
+                            <td>Bonita</td>
+                            <td>Jill Masterson /<br />Tilly Masterson</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Thunderball</th>
+                            <td>Domino Derval</td>
+                            <td>Fiona Volpe</td>
+                            <td>Paula Caplan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- Right Column -->
+        <aside class="column right">
+
+            <a href="mailto:toddbrentlinger@gmail.com"><h3>Email Me</h3></a>
+
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2017 your imagination. This isn't really copyright, this is a mockery of the
+            very concept.
+        </p>
+
+        <address>
+            <p>Todd Brentlinger, Santa Cruz, CA, USA</p>
+        </address>
+
+    </footer>
+
+    <script src=""></script>
+
+</body>
+
+</html>

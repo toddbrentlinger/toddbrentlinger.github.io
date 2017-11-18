@@ -1,0 +1,232 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'PT Serif', Arial, sans-serif;
+    font-size: 16px; /* 100% */
+    /* avoid problems with adjusted text size in older browser versions 
+    when using em/rem units for font-size in other html elements 
+    (1em/rem = 16px depending on parent element(em) or root element(rem)
+    size font
+    */
+    line-height: 1.2;
+}
+
+body {
+    background-color: white;
+    font-size: 100%;
+    /*
+    max-width: 1400px;
+    margin: 0 auto;
+    */
+    background-color: white;
+    /*padding: 0 20px 20px 20px;*/
+    /*border: 3px solid black;*/
+}
+
+h1 {
+    margin: 0.67em 0;
+}
+
+h2 {
+    margin: 0.83em 0;
+}
+
+h3 {
+    margin: 1em 0;
+}
+
+ol {
+    margin: 1em 0;
+    padding-left: 40px;
+}
+
+p {
+    margin: 1em 0;
+    /*border: 2px ridge rgb(175,175,175);*/
+}
+
+/* ---------------------------------------------------- */
+/* Header */
+/* ---------------------------------------------------- */
+header {
+    background-color: #466995; /* fallback color in case linear-gradient not supported */
+    background: linear-gradient(#466995, #DBE9EE);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    text-shadow: 0.1em 0.1em 10px black;
+}
+
+/* ---------------------------------------------------- */
+/* Footer */
+/* ---------------------------------------------------- */
+footer {
+    background-color: #466995; /* fallback color in case linear-gradient not supported */
+    background: linear-gradient(to top,#466995, #DBE9EE);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ---------------------------------------------------- */
+/* Top Navigation */
+/* ---------------------------------------------------- */
+
+/* Style the top navigation bar, unordered list */
+#topnav ul {
+    list-style-type: none;
+    margin: 0; /* 0 auto */
+    padding: 0;
+    overflow: hidden;
+    background-color: #DBE9EE;
+}
+
+/* Style the top navigation list element */
+#topnav li {
+    float: left;
+}
+
+/* Style the top navigation links */
+#topnav a:link, #topnav a:visited {
+    display: inline-block;
+    color: #466995;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the color on hover */
+#topnav a:hover, #topnav a:active {
+    background-color: #466995;
+    color: white;
+}
+
+/* Change the color of active page */
+#topnav a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+
+/* Is this necessary since I used float property? */
+#topnav::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* ---------------------------------------------------- */
+/* Side Navigation */
+/* ---------------------------------------------------- */
+
+/* Style side navigation unordered list element */
+#sidenav ul {
+    list-style-type: none;
+    /*margin: 0.5rem 0.3rem;*/
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+/* Style the side navigation list element */
+#sidenav li {
+    padding: 2px 2px;
+}
+
+/* Style the side navigation links */
+#sidenav a:link, #sidenav a:visited {
+    display: block;
+    background-color: #DBE9EE;
+    color: #466995;
+    text-align: center;
+    padding: 0.875rem 1rem;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+/* Change the color on hover */
+#sidenav a:hover, #sidenav a:active {
+    background-color: #466995;
+    color: white;
+}
+
+/* ---------------------------------------------------- */
+/* Image Style */
+/* ---------------------------------------------------- */
+
+/* Style image-container */
+.image-container {
+    /*width: 50%;
+    height: 250px;*/
+    overflow: hidden;
+    /*border: 1px solid black;*/
+    margin: 0 auto;
+}
+
+.image-container img {
+    /*max-width: 100%;
+    height: auto;*/
+    display: block;
+    margin: 0 auto;
+    border: 0; /* prevent IE9 (and earlier) from displaying a border around the edges */
+}
+
+/* ---------------------------------------------------- */
+/* Columns */
+/* ---------------------------------------------------- */
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+}
+
+/* Left column, Side Nav */
+.column.left {
+    width: 15%;
+    text-align: center;
+}
+
+/* Middle column, Main */
+.column.middle {
+    width: 70%;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+/* Right column */
+.column.right {
+    width: 15%;
+    text-align: center;
+    padding: 0.9rem;
+    border: 1px solid black;
+}
+
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other
+    instead of next to each other */
+@media (max-width:800px) {
+    /* For tablet: */
+    .column.left, .column.middle, .column.right {
+        width: 100%;
+    }
+}
+
+@media (max-width:500px) {
+    /* For mobile phones: */
+    .column.left, .column.middle, .column.right {
+        width: 100%;
+    }
+}

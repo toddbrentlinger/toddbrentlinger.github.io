@@ -4,8 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todd Brentlinger's Website</title>
+    <title>JavaScript | Todd Brentlinger's Website</title>
     <!--
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
      -->
@@ -14,32 +13,33 @@
     <!-- Attribute name="description" is used for search engines. Include
         keywords relating to the webpage -->
     <meta name="description" content="Todd Brentlinger's personal website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
 
     <!-- Header -->
     <header>
-        <h1>Todd Brentlinger's Website</h1>
+        <h1>JavaScript Examples</h1>
     </header>
 
     <!-- Top Navigation -->
     <nav id="topnav">
         <ul>
-            <li><a class="active-page" href="index.html">Home</a></li>
-            <li><a href="/professional/professional.html">Professional</a></li>
-            <li><a href="/personal/personal.html">Personal</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../professional/professional.html">Professional</a></li>
+            <li><a href="../personal/personal.html">Personal</a></li>
             <li><a href="#">Social</a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="/bond/bond-rank.html">James Bond</a></li>
-            <li><a href="/pages/javascript-examples.html">JavaScript</a></li>
+            <li><a href="../bond/bond-rank.html">James Bond</a></li>
+            <li><a class="active-page" href="../pages/javascript-examples.html">JavaScript</a></li>
         </ul>
     </nav>
 
     <main class="row">
 
         <!-- Left Column -->
-        <nav id="sidenav" class="column left">
+        <div id="sidenav" class="column left">
             <!-- nav/aside/div element? -->
             <!--
             <h2>Side Nav</h2>
@@ -52,31 +52,27 @@
                 <li><a href="#">Side Nav 5</a></li>
             </ul>
 
-        </nav>
+        </div>
 
         <!-- Middle Column -->
         <div class="column middle">
 
-            <h2 class="text-center">Hello World!</h2>
+            <h1>Number Guessing Game</h1>
 
-            <div class="image-container float-left">
-                <img src="/images/todd-brentlinger-profile-pic.jpg" alt="My Profile Picture"
-                     width="250" height="250" />
+            <p>We have selected a random number between 1 and 100. See if
+            you can guess it in 10 turns or fewer We'll tell you if your guess
+            is too high or too low.</p>
+
+            <div class="form">
+                <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField" />
+                <input type="submit" value="Submit guess" class="guessSubmit" />
             </div>
 
-            <p>
-                Welcome to Todd Brentlinger's Website!<br />
-                Please forgive how this website is stupidly simple. I'm using it to
-                learn HTML &amp; CSS.
-            </p>
-
-            <hr />
-
-            <p title="I'm a tooltip">This is a paragraph with a tooltip.</p>
-
-            <hr />
-
-            <h3 class="text-center"><a href="/pages/old-index.html">old-index.html</a></h3>
+            <div class="resultParas">
+                <p class="guesses"></p>
+                <p class="lastResult"></p>
+                <p class="lowOrHi"></p>
+            </div>
 
         </div>
 
@@ -103,7 +99,7 @@
 
     </footer>
 
-    <script src=""></script>
+    <script src="/scripts/number-guessing-game.js"></script>
 
 </body>
 
