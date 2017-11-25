@@ -5,10 +5,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todd Brentlinger's Website</title>
+    <title>Professional | Todd Brentlinger's Website</title>
     <!--
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
      -->
+    <link rel="stylesheet" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
     <meta name="author" content="Todd Brentlinger" />
     <!-- Attribute name="description" is used for search engines. Include
@@ -28,6 +29,7 @@
 
         #resume-text h2, #resume-text h3 {
             text-align: center;
+            color: black;
         }
 
         #resume-text h3 {
@@ -112,16 +114,16 @@
 
     <!-- Header -->
     <header>
-        <h1>Todd Brentlinger's Website</h1>
+        <h1>Professional</h1>
     </header>
 
     <!-- Top Navigation -->
     <nav id="topnav">
         <ul>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
             <li><a class="active-page" href="../professional/professional.html">Professional</a></li>
             <li><a href="../personal/personal.html">Personal</a></li>
-            <li><a href="#">Social</a></li>
+            <li><a href="/social/social.html">Social</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="../bond/bond-rank.html">James Bond</a></li>
             <li><a href="../pages/javascript-examples.html">JavaScript</a></li>
@@ -137,9 +139,33 @@
             <h2>Side Nav</h2>
             -->
             <ul>
-                <li><a href="#resume-pdf">Resume (PDF)</a></li>
-                <li><a href="#resume-text">Resume</a></li>
-                <li><a href="#github">GitHub</a></li>
+                <li>
+                    <a href="#resume-pdf">
+                        <span class="fa fa-file-pdf-o fa-lg fa-fw" aria-hidden="true"></span>
+                        Resume (PDF)
+                    </a>
+                </li>
+                <li>
+                    <a href="#resume-text">
+                        <span class="fa fa-file-text-o fa-lg fa-fw" aria-hidden="true"></span>
+                        Resume
+                    </a>
+                </li>
+                <li>
+                    <a href="#linkedin">
+                        <span class="fa fa-linkedin fa-lg fa-fw" aria-hidden="true"></span>
+                        LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="#github">
+                        <span class="fa fa-github fa-lg fa-fw" aria-hidden="true"></span>
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="#programming">Programming / Web Dev</a>
+                </li>
             </ul>
 
         </nav>
@@ -150,7 +176,10 @@
             <!-- Resume (PDF) -->
             <div id="resume-pdf" class="button">
                 <a href="../files/Todd Brentlinger Resume 2017, V2.pdf"
-                   target="_blank">Resume (PDF, 46KB)</a>
+                   target="_blank">
+                    <span class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></span>
+                    Resume (PDF, 46KB)
+                </a>
             </div>
 
             <!-- Resume (text) -->
@@ -293,9 +322,30 @@
 
             </div>
 
+            <!-- LinkedIn -->
+            <div id="linkedin" class="button">
+                <a href="https://www.linkedin.com/in/todd-brentlinger-a307a145" target="_blank">
+                    <span class="fa fa-linkedin fa-lg" aria-hidden="true"></span>
+                    LinkedIn
+                </a>
+            </div>
+
             <!-- GitHub -->
             <div id="github" class="button">
-                <a href="https://github.com/toddbrentlinger" target="_blank">GitHub Profile</a>
+                <a href="https://github.com/toddbrentlinger" target="_blank">
+                    <span class="fa fa-github fa-lg" aria-hidden="true"></span>
+                    GitHub Profile
+                </a>
+            </div>
+
+            <!-- Programming / Web Development -->
+            <div id="programming">
+                <h2>Programming / Web Development</h2>
+
+                <div class="button">
+                    <a href="../pages/layout-examples.html">CSS Layout Examples</a>
+                </div>
+
             </div>
 
         </div>
@@ -303,7 +353,12 @@
         <!-- Right Column -->
         <aside class="column right">
 
-            <a href="mailto:toddbrentlinger@gmail.com"><h3>Email Me</h3></a>
+            <div class="button">
+                <a href="mailto:toddbrentlinger@gmail.com">
+                    <span class="fa fa-envelope-o"></span>
+                    Email Me
+                </a>
+            </div>
 
         </aside>
 

@@ -8,12 +8,49 @@
     <!--
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
      -->
+    <link rel="stylesheet" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
     <meta name="author" content="Todd Brentlinger" />
     <!-- Attribute name="description" is used for search engines. Include
         keywords relating to the webpage -->
     <meta name="description" content="Todd Brentlinger's personal website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        /* Number Guessing Game */
+        #number-guessing {
+            text-align: center;
+        }
+
+        /* Silly Story Generator */
+        #silly-story {
+            font-family: helvetica, sans-serif;
+            width: 350px;
+            margin: 0 auto;
+        }
+        
+        #silly-story label {
+            font-weight: bold;
+        }
+        
+        #silly-story div {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        
+        #silly-story input[type="text"] {
+            padding: 5px;
+            width: 150px;
+        }
+        
+        #silly-story p {
+            background: #FFC125;
+            color: #5E2612;
+            padding: 10px;
+            visibility: hidden;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -26,10 +63,10 @@
     <!-- Top Navigation -->
     <nav id="topnav">
         <ul>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
             <li><a href="../professional/professional.html">Professional</a></li>
             <li><a href="../personal/personal.html">Personal</a></li>
-            <li><a href="#">Social</a></li>
+            <li><a href="/social/social.html">Social</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="../bond/bond-rank.html">James Bond</a></li>
             <li><a class="active-page" href="../pages/javascript-examples.html">JavaScript</a></li>
@@ -45,11 +82,8 @@
             <h2>Side Nav</h2>
             -->
             <ul>
-                <li><a href="#">Side Nav 1</a></li>
-                <li><a href="#">Side Nav 2</a></li>
-                <li><a href="#">Side Nav 3</a></li>
-                <li><a href="#">Side Nav 4</a></li>
-                <li><a href="#">Side Nav 5</a></li>
+                <li><a href="#number-guessing">Number Guessing Game</a></li>
+                <li><a href="#silly-story">Silly Story Generator</a></li>
             </ul>
 
         </div>
@@ -57,29 +91,71 @@
         <!-- Middle Column -->
         <div class="column middle">
 
-            <h1>Number Guessing Game</h1>
-
-            <p>We have selected a random number between 1 and 100. See if
-            you can guess it in 10 turns or fewer We'll tell you if your guess
-            is too high or too low.</p>
-
-            <div class="form">
-                <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField" />
-                <input type="submit" value="Submit guess" class="guessSubmit" />
+            <div class="button">
+                <a href="#">Sample Button</a>
             </div>
 
-            <div class="resultParas">
-                <p class="guesses"></p>
-                <p class="lastResult"></p>
-                <p class="lowOrHi"></p>
+            <!-- Number Guessing Game -->
+            <div id="number-guessing">
+                <h2>Number Guessing Game</h2>
+
+                <p>
+                    We have selected a random number between 1 and 100. See if
+                    you can guess it in 10 turns or fewer We'll tell you if your guess
+                    is too high or too low.
+                </p>
+
+                <div class="form">
+                    <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField" />
+                    <input type="submit" value="Submit guess" class="guessSubmit" />
+                </div>
+
+                <div class="resultParas">
+                    <p class="guesses"></p>
+                    <p class="lastResult"></p>
+                    <p class="lowOrHi"></p>
+                </div>
             </div>
+
+            <hr />
+
+            <!-- Silly Story Generator -->
+            <div id="silly-story">
+
+                <h2>Silly Story Generator</h2>
+
+                <div>
+                    <label for="customname">Enter custom name:</label>
+                    <input id="customname" type="text" placeholder="">
+                </div>
+
+                <div>
+                    <label for="us">US</label><input id="us" type="radio" name="ukus" value="us" checked>
+                    <label for="uk">UK</label><input id="uk" type="radio" name="ukus" value="uk">
+                </div>
+
+                <div>
+                    <button class="randomize">Generate random story</button>
+                </div>
+
+                <p class="story"></p>
+
+            </div>
+
+            <hr />
 
         </div>
 
         <!-- Right Column -->
         <aside class="column right">
 
-            <a href="mailto:toddbrentlinger@gmail.com"><h3>Email Me</h3></a>
+            <!-- Email Me -->
+            <div class="button">
+                <a href="mailto:toddbrentlinger@gmail.com">
+                    <span class="fa fa-envelope-o"></span>
+                    Email Me
+                </a>
+            </div>
 
         </aside>
 
@@ -100,6 +176,7 @@
     </footer>
 
     <script src="/scripts/number-guessing-game.js"></script>
+    <script src="../scripts/silly-story-generator.js"></script>
 
 </body>
 

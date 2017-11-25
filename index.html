@@ -9,6 +9,7 @@
     <!--
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
      -->
+    <link rel="stylesheet" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
     <meta name="author" content="Todd Brentlinger" />
     <!-- Attribute name="description" is used for search engines. Include
@@ -26,10 +27,10 @@
     <!-- Top Navigation -->
     <nav id="topnav">
         <ul>
-            <li><a class="active-page" href="index.html">Home</a></li>
+            <li><a class="active-page" href="index.html"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
             <li><a href="/professional/professional.html">Professional</a></li>
             <li><a href="/personal/personal.html">Personal</a></li>
-            <li><a href="#">Social</a></li>
+            <li><a href="/social/social.html">Social</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="/bond/bond-rank.html">James Bond</a></li>
             <li><a href="/pages/javascript-examples.html">JavaScript</a></li>
@@ -41,15 +42,9 @@
         <!-- Left Column -->
         <nav id="sidenav" class="column left">
             <!-- nav/aside/div element? -->
-            <!--
-            <h2>Side Nav</h2>
-            -->
             <ul>
-                <li><a href="#">Side Nav 1</a></li>
-                <li><a href="#">Side Nav 2</a></li>
-                <li><a href="#">Side Nav 3</a></li>
-                <li><a href="#">Side Nav 4</a></li>
-                <li><a href="#">Side Nav 5</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
 
         </nav>
@@ -57,7 +52,7 @@
         <!-- Middle Column -->
         <div class="column middle">
 
-            <h2 class="text-center">Hello World!</h2>
+            <h2>Hello World!</h2>
 
             <div class="image-container float-left">
                 <img src="/images/todd-brentlinger-profile-pic.jpg" alt="My Profile Picture"
@@ -76,14 +71,19 @@
 
             <hr />
 
-            <h3 class="text-center"><a href="/pages/old-index.html">old-index.html</a></h3>
+            <h3><a href="/pages/old-index.html">old-index.html</a></h3>
 
         </div>
 
         <!-- Right Column -->
         <aside class="column right">
 
-            <a href="mailto:toddbrentlinger@gmail.com"><h3>Email Me</h3></a>
+            <div class="button">
+                <a href="mailto:toddbrentlinger@gmail.com">
+                    <span class="fa fa-envelope-o"></span>
+                    Email Me
+                </a>
+            </div>
 
         </aside>
 
@@ -93,8 +93,8 @@
     <footer>
 
         <p>
-            &copy; 2017 your imagination. This isn't really copyright, this is a mockery of the
-            very concept.
+            &copy; 2017 Todd Brentlinger.<br />
+            Code licensed under MIT License.
         </p>
 
         <address>
