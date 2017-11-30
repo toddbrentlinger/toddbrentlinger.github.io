@@ -274,17 +274,17 @@ footer {
 /* Button */
 /* ---------------------------------------------------- */
 
-        .button {
+.button {
             text-align: center;
             padding: 1em;
         }
 
-        .button a {
+.button a {
             margin: 0 auto;
             padding: 0.8em;
         }
 
-        .button a:link, .button a:visited {
+.button a:link, .button a:visited {
             display: inline-block;
             font-size: 1.5rem;
             color: #466995; /* rgb(70, 105, 149) */
@@ -300,7 +300,7 @@ footer {
                 inset 2px 3px 5px rgba(255,255,255,0.3);
         }
 
-        .button a:hover, .button a:active {
+.button a:hover, .button a:active {
             color: white;
             /* background */
             background-color: #466995;
@@ -308,13 +308,60 @@ footer {
             
         }
 
-        .button a:active {
+.button a:active {
             /* box shadow */
             box-shadow: 2px 2px 10px rgba(0,0,0,0.4),
                 inset 2px 3px 2px black,
                 inset 2px 3px 5px rgba(0,0,0,0.8),
                 inset -2px -3px 5px rgba(255, 255, 255, 0.3);
         }
+
+/* ---------------------------------------------------- */
+/* Unordered List */
+/* ---------------------------------------------------- */
+/*
+.column.middle ul {
+            width: 30%;
+            min-width: 18.75em;
+            margin: 0 auto;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.4);
+            border-left: 5px solid #267257;
+            background-color: #F2F2F2;
+        }
+*/
+/* ---------------------------------------------------- */
+/* Social Media Logos */
+/* ---------------------------------------------------- */
+
+#social-media-logos a {
+    display: inline-block;
+}
+
+#twitter-logo .fa-circle {
+    color: #00B6F1 /* twitter blue */
+}
+
+#facebook-logo .fa-circle {
+    color: #3B5998; /* facebook blue */
+}
+
+#instagram-logo .fa-circle {
+    color: #C32AA3; /* instagram magenta */
+}
+
+#youtube-logo .fa-circle {
+    color: #FF0000; /* youtube red */
+}
+
+#linkedin-logo .fa-circle {
+    color: #007BB5; /* linkedin blue */
+}
+
+#google-logo .fa-circle {
+    color: #DF4A32; /* google+ red */
+}
 
 /* ---------------------------------------------------- */
 /* Responsive Layout */

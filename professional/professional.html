@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
      -->
     <link rel="stylesheet" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
     <meta name="author" content="Todd Brentlinger" />
     <!-- Attribute name="description" is used for search engines. Include
         keywords relating to the webpage -->
@@ -104,6 +104,17 @@
 
         #resume-experience div ul {
             clear: both;
+        }
+
+        #programming ul {
+            width: 30%;
+            min-width: 18.75em;
+            margin: 0 auto;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.4);
+            border-left: 5px solid #267257;
+            background-color: #F2F2F2;
         }
 
     </style>
@@ -339,25 +350,82 @@
             </div>
 
             <!-- Programming / Web Development -->
-            <div id="programming">
+            <section id="programming">
                 <h2>Programming / Web Development</h2>
+
+                <ul>
+                    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/" target="_blank">Mozilla Developer Network (MDN)</a></li>
+                    <li><a href="https://codepen.io/" target="_blank">Codepen</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank">w3Schools</a></li>
+                    <li><a href="https://projecteuler.net/" target="_blank">Project Euler</a></li>
+                </ul>
 
                 <div class="button">
                     <a href="../pages/layout-examples.html">CSS Layout Examples</a>
                 </div>
 
-            </div>
+                <div class="button">
+                    <a href="../pages/flexbox-examples.html">CSS Flexbox Examples</a>
+                </div>
+
+            </section>
 
         </div>
 
         <!-- Right Column -->
         <aside class="column right">
 
-            <div class="button">
-                <a href="mailto:toddbrentlinger@gmail.com">
-                    <span class="fa fa-envelope-o"></span>
-                    Email Me
+            <div id="social-media-logos">
+                <!-- Twitter Logo -->
+                <a id="twitter-logo" href="https://twitter.com/ToddBrentlinger" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
+                    </span>
                 </a>
+
+                <!-- Facebook Logo -->
+                <a id="facebook-logo" href="https://www.facebook.com/todd.brentlinger.7" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-facebook fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- Instagram Logo -->
+                <a id="instagram-logo" href="https://www.instagram.com/toddbrentlinger/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-instagram fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- YouTube -->
+                <a id="youtube-logo" href="https://www.youtube.com/channel/UCD5ft_s9gCmYvIonqJGY1Iw" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-youtube-square fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a id="linkedin-logo" href="https://www.linkedin.com/in/todd-brentlinger-a307a145" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-linkedin fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- GMail -->
+                <a id="google-logo" href="mailto:toddbrentlinger@gmail.com">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-envelope-o fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
             </div>
 
         </aside>

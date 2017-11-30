@@ -145,7 +145,6 @@ footer {
     list-style-type: none;
     overflow: hidden;
     text-align: center;
-    /*margin: 0.5rem 0.3rem;*/
     padding: 0; /* remove default padding for ul elements */
     margin: 0; /* remove default margin for ul elements */
 }
@@ -153,9 +152,6 @@ footer {
 /* Style the side navigation list element */
 #sidenav li {
     margin: 1px 3px;
-    background-color: #DBE9EE;
-    background-image: linear-gradient(to bottom right, #B6C9D8, #DBE9EE);
-    border-radius: 10px;
 }
 
 /* Side navigation anchor(link) elements */
@@ -163,8 +159,13 @@ footer {
     display: block;
     padding: 0.75em 0.875em; /* 14px 16px (1em=16px) */
     text-decoration: none;
-    border-radius: 10px;
+    background-color: #DBE9EE;
+    background-image: linear-gradient(to bottom right, #97B0CE, #DBE9EE);
+    border-radius: 1em;
     border: 2px solid #466995;
+    box-shadow: inset -1px -1px 1px rgba(0,0,0,0.3),
+        inset -2px -3px 5px rgba(0,0,0,0.3), /* black shadow bottom right */
+        inset 2px 3px 5px rgba(255,255,255,0.3); /* white shadow top left */
 }
 
 /* Side navigation anchor(link) elements */
@@ -172,10 +173,18 @@ footer {
     color: #466995;
 }
 
-/* Change the color on hover */
-#sidenav a:hover, #sidenav a:active {
+/* Change on hover */
+#sidenav a:hover {
     background-color: #466995;
+    background-image: none;
     color: white;
+}
+
+/* Change when active (clicked) */
+#sidenav a:active {
+    box-shadow: inset 2px 3px 2px black,
+        inset 2px 3px 5px rgba(0,0,0,0.3),
+        inset -2px -3px 5px rgba(255, 255, 255, 0.3);
 }
 
 /* ---------------------------------------------------- */
@@ -185,6 +194,13 @@ footer {
 .row {
     background-color: #DBE9EE;
     padding: 0.25em 0;
+}
+
+/* Clear floats after the columns.*/
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 /* ---------------------------------------------------- */
@@ -217,20 +233,15 @@ footer {
     padding: 0.9rem;
 }
 
-/* Clear floats after the columns */
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+/* Align headers to center in middle column */
+.middle h2, .middle h3 {
+    text-align: center;
+    color: #466995;
 }
 
 /* ---------------------------------------------------- */
 /* Misc Class Selectors */
 /* ---------------------------------------------------- */
-
-.text-center {
-    text-align: center;
-}
 
 .float-left {
     float: left;
@@ -243,7 +254,10 @@ footer {
     display: table;
 }
 
-/* image-container class */
+/* ---------------------------------------------------- */
+/* Image-container */
+/* ---------------------------------------------------- */
+
 .image-container {
     overflow: hidden;
 }
@@ -265,25 +279,41 @@ footer {
             padding: 1em;
         }
 
+        .button a {
+            margin: 0 auto;
+            padding: 0.8em;
+        }
+
         .button a:link, .button a:visited {
             display: inline-block;
-            font-size: 2rem;
-            color: #466995;
-            margin: 0.125em auto;
-            padding: 0.875em 1em;
+            font-size: 1.5rem;
+            color: #466995; /* rgb(70, 105, 149) */
             text-decoration: none;
+            /* background */
+            background-image: linear-gradient(to bottom right, #97B0CE, #DBE9EE);
+            /* border */
             border: 3px solid #466995;
-            border-radius: 1em;
-            box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.4);
-            background-image: linear-gradient(to bottom right, #B6C9D8, #DBE9EE);
+            border-radius: 1.3em;
+            /* box shadow */
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.4),
+                inset -2px -3px 5px rgba(0,0,0,0.3),
+                inset 2px 3px 5px rgba(255,255,255,0.3);
         }
 
         .button a:hover, .button a:active {
-            background-color: #466995;
             color: white;
-            margin: 0 auto;
-            padding: 1em 1.125em;
+            /* background */
+            background-color: #466995;
             background-image: none;
+            
+        }
+
+        .button a:active {
+            /* box shadow */
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.4),
+                inset 2px 3px 2px black,
+                inset 2px 3px 5px rgba(0,0,0,0.8),
+                inset -2px -3px 5px rgba(255, 255, 255, 0.3);
         }
 
 /* ---------------------------------------------------- */

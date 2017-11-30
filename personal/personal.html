@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
+
         .media-container {
             overflow: auto;
             text-align: center;
@@ -24,6 +25,30 @@
 
         .media-container iframe {
         }
+
+        /* YouTube Playlists */
+
+        #youtube-playlists {
+            text-align: center;
+        }
+
+        .inv {
+            display: none;
+        }
+
+        /* Interesting Websites */
+
+        #websites ul {
+            width: 30%;
+            min-width: 18.75em; /* 18.75em*16px=300px */
+            margin: 0 auto;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.4);
+            border-left: 5px solid #267257;
+            background-color: #F2F2F2;
+        }
+
     </style>
 
 </head>
@@ -98,11 +123,132 @@
                 </a>
             </div>
 
-            <h2>Conan O'Brien Remotes</h2>
+            <!-- YouTube Playlists -->
+            <div id="youtube-playlists">
 
-            <div class="media-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sJrFvdH7R9ypxz2JPmLxt79"
-                        frameborder="0" gesture="media" allowfullscreen></iframe>
+                <h2>YouTube Playlists</h2>
+
+                <label for="playlist">Select Playlist: </label>
+                <select id="playlist">
+                    <option value="">--Make a choice--</option>
+                    <optgroup label="Game Informer">
+                        <option value="gi-replay-s1">Replay (Season 1)</option>
+                        <option value="gi-replay-s2">Replay (Season 2)</option>
+                        <option value="gi-replay-s3">Replay (Season 3)</option>
+                        <option value="gi-replay-s4">Replay (Season 4)</option>
+                        <option value="gi-super-replay-showdown">Super Replay Showdown</option>
+                        <option value="gi-favorite">Game Informer - Favorite</option>
+                    </optgroup>
+                    <optgroup label="Hat Films/Yogscast">
+                        <option value="yogscast-misc">Hat Films/Yogscast - Misc</option>
+                        <option value="yogscast-gta">Hat Films/Yogscast - GTA V</option>
+                        <option value="yogscast-gmod">Hat Films/Yogscast - Gmod</option>
+                        <option value="yogscast-minecraft">Hat Films/Yogscast - Minecraft</option>
+                    </optgroup>
+                    <optgroup label="Comedy">
+                        <option value="conan-remotes">Conan O'Brien Remotes</option>
+                        <option value="conan">Conan O'Brien</option>
+                        <option value="comedy-misc">Comedy - Misc</option>
+                        <option value="whose-line">Whose Line Is It Anyway</option>
+                    </optgroup>
+                    <optgroup label="Screen Junkies">
+                        <option value="movie-fights">Screen Junkies - Movies Fights - Favorite</option>
+                        <option value="screen-junkies-misc">Screen Junkies - Misc</option>
+                    </optgroup>
+                </select>
+
+                <!-- Base media-container for youtube playlists with src changed for each select option above -->
+                <div id="base-media-container" class="inv">
+                    <div class="media-container">
+                        <h3></h3>
+                        <iframe width="560" height="315" src=""
+                                frameborder="0" gesture="media" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Game Informer -->
+                <!-- Game Informer - Replay (Season 1) -->
+                <section id="gi-replay-s1" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sKt5QHOkLbG6WrICCKsRgNl">Game Informer - Replay (Season 1)</a>
+                </section>
+                <!-- Game Informer - Replay (Season 2) -->
+                <section id="gi-replay-s2" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sKlhqQ9mjOtxRsizQdEWDo5">Game Informer - Replay (Season 2)</a>
+                </section>
+                <!-- Game Informer - Replay (Season 3) -->
+                <section id="gi-replay-s3" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sKqQnk0Gh8bDHF66sb4bieC">Game Informer - Replay (Season 3)</a>
+                </section>
+                <!-- Game Informer - Replay (Season 4) -->
+                <section id="gi-replay-s4" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sK--m9Ym2_fBKptdKWzlLdo">Game Informer - Replay (Season 4)</a>
+                </section>
+                <!-- Game Informer - Super Replay Showdown -->
+                <section id="gi-super-replay-showdown" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sKOIX3ibMMspVhMqknMI0Y8">Game Informer - Super Replay Showdown</a>
+                </section>
+                <!-- Game Informer - Favorite -->
+                <section id="gi-favorite" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sKMp605SaSXRi9sQ1HMaAbZ">Game Informer - Favorite</a>
+                </section>
+
+                <!-- Hat Films/Yogscast -->
+                <!-- Hat Films/Yogscast - Misc -->
+                <section id="yogscast-misc" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sJ0UBiyZ7LWpax03LQPzHMJ">HatFilms/Yogscast - Misc</a>
+                </section>
+                <!-- Hat Films/Yogscast - GTA V -->
+                <section id="yogscast-gta" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sKdwEU3FxzL22MXTYW9mcmC">HatFilms/Yogscast - GTA V</a>
+                </section>
+                <!-- Hat Films/Yogscast - GMod -->
+                <section id="yogscast-gmod" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sInP-_vS9htd99uLOZkuE1x">HatFilms/Yogscast - GMod</a>
+                </section>
+                <!-- Hat Films/Yogscast - Minecraft -->
+                <section id="yogscast-minecraft" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sKRAyyEFaqJUTUvH7V-cKPk">HatFilms/Yogscast - Minecraft</a>
+                </section>
+
+
+                <!-- Comedy -->
+                <!-- Conan O'Brien Remotes -->
+                <section id="conan-remotes" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sJrFvdH7R9ypxz2JPmLxt79">Conan O'Brien Remotes</a>
+                </section>
+                <!-- Conan O'Brien -->
+                <section id="conan" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sIdC0YYeiciA3pNVCMNUA2R">Conan O'Brien</a>
+                </section>
+                <!-- Comedy - Misc -->
+                <section id="comedy-misc" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sJsEZO9pjrBgi-BXIP9hIbd">Comedy - Misc</a>
+                </section>
+                <!-- Whose Line Is It Anyway -->
+                <section id="whose-line" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sLZnJlA3g61AAB-yC0L89a_">Whose Line Is It Anyway</a>
+                </section>
+
+                <!-- Screen Junkies -->
+                <!-- Screen Junkies - Movie Fights - Favorite -->
+                <section id="movie-fights" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sK5nB5oWJV3mw5PO6fK3fzl">Screen Junkies - Movie Fights - Favorite</a>
+                </section>
+                <!-- Screen Junkies - Misc -->
+                <section id="screen-junkies-misc" class="inv">
+                    <a href="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sLtJaJYD2c6zyu_QdAAfXpC">Screen Junkies - Misc</a>
+                </section>
+
+                <!--
+                <section>
+                    <h2>Conan O'Brien Remotes</h2>
+
+                    <div class="media-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLZNR-vaGz1sJrFvdH7R9ypxz2JPmLxt79"
+                                frameborder="0" gesture="media" allowfullscreen></iframe>
+                    </div>
+                </section>
+                -->
             </div>
             
             <!-- Spotify -->
@@ -120,7 +266,15 @@
 
             <!-- Interesting Websites -->
             <div id="websites">
+
                 <h2>Interesting Websites</h2>
+
+                <ul>
+                    <li><a href="https://www.reddit.com" target="_blank">Reddit</a></li>
+                    <li><a href="https://www.imdb.com" target="_blank">IMDB</a></li>
+                    <li><a href="https://www.gameinformer.com" target="_blank">Game Informer</a></li>
+                </ul>
+
             </div>
 
             <!-- PlayStation Trophies -->
@@ -150,12 +304,55 @@
         <!-- Right Column -->
         <aside class="column right">
 
-            <!-- Email Me -->
-            <div class="button">
-                <a href="mailto:toddbrentlinger@gmail.com">
-                    <span class="fa fa-envelope-o"></span>
-                    Email Me
+            <div id="social-media-logos">
+                <!-- Twitter Logo -->
+                <a id="twitter-logo" href="https://twitter.com/ToddBrentlinger" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
+                    </span>
                 </a>
+
+                <!-- Facebook Logo -->
+                <a id="facebook-logo" href="https://www.facebook.com/todd.brentlinger.7" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-facebook fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- Instagram Logo -->
+                <a id="instagram-logo" href="https://www.instagram.com/toddbrentlinger/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-instagram fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- YouTube -->
+                <a id="youtube-logo" href="https://www.youtube.com/channel/UCD5ft_s9gCmYvIonqJGY1Iw" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-youtube-square fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a id="linkedin-logo" href="https://www.linkedin.com/in/todd-brentlinger-a307a145" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-linkedin fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- GMail -->
+                <a id="google-logo" href="mailto:toddbrentlinger@gmail.com">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-envelope-o fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
             </div>
 
         </aside>
@@ -177,6 +374,7 @@
     </footer>
 
     <script src=""></script>
+    <script src="../scripts/youtube-playlist-change.js"></script>
 
 </body>
 

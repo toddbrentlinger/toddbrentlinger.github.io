@@ -15,3 +15,8 @@ myImage.onclick = function () {
         myImage.setAttribute('height', '250');
     }
 }
+
+// Generate random number between 0-number
+function random(number) {
+    return Math.floor(Math.random() * number);
+}
