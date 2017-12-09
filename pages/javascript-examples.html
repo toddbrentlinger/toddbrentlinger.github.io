@@ -17,18 +17,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
-        .column.middle div {
+
+        /* General Style */
+
+        .column.middle section {
             max-width: 600px;
             width: 70%;
-            margin: 0 auto;
         }
 
         /* Number Guessing Game */
+
         #number-guessing {
             text-align: center;
         }
 
         /* Silly Story Generator */
+
         #silly-story {
             font-family: helvetica, sans-serif;
             width: 350px;
@@ -41,7 +45,7 @@
         
         #silly-story div {
             text-align: center;
-            padding-bottom: 20px;
+            padding-bottom: 1em;
         }
         
         #silly-story input[type="text"] {
@@ -55,6 +59,44 @@
             padding: 10px;
             visibility: hidden;
         }
+
+        /* Function Library Example */
+
+        #function-library-example {
+            text-align: center;
+        }
+
+        #function-library-example input {
+            font-size: 1.5em;
+            margin: 10px 1px 0;
+        }
+
+        /* Event Handler: onclick */
+
+        #event-handler-onclick {
+            max-width: initial;
+            width: 100%;
+            padding-bottom: 5em;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        /* Event Handler: onclick II */
+
+        #event-handler-onclick-2 div {
+            background-color: red;
+            height: 100px;
+            width: 25%;
+            float: left;
+        }
+
+        /* clear floats */
+        #event-handler-onclick-2::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
     </style>
 
 </head>
@@ -91,6 +133,9 @@
                 <li><a href="#number-guessing">Number Guessing Game</a></li>
                 <li><a href="#silly-story">Silly Story Generator</a></li>
                 <li><a href="#date-time">Date/Time</a></li>
+                <li><a href="#function-library-example">Function Library Example</a></li>
+                <li><a href="#event-handler-onclick">Event Handler: onclick</a></li>
+                <li><a href="#event-handler-onclick-2">Event Handler: onclick II</a></li>
             </ul>
 
         </div>
@@ -98,12 +143,15 @@
         <!-- Middle Column -->
         <div class="column middle">
 
+            <!-- Sample Button CSS -->
             <div class="button">
                 <a href="#">Sample Button</a>
             </div>
 
+            <hr />
+
             <!-- Number Guessing Game -->
-            <div id="number-guessing">
+            <section id="number-guessing">
                 <h2>Number Guessing Game</h2>
 
                 <p>
@@ -122,12 +170,12 @@
                     <p class="lastResult"></p>
                     <p class="lowOrHi"></p>
                 </div>
-            </div>
+            </section>
 
             <hr />
 
             <!-- Silly Story Generator -->
-            <div id="silly-story">
+            <section id="silly-story">
 
                 <h2>Silly Story Generator</h2>
 
@@ -147,16 +195,79 @@
 
                 <p class="story"></p>
 
-            </div>
+            </section>
 
             <hr />
 
             <!-- Date / Time -->
-            <div id="date-time">
+            <section id="date-time">
+
                 <h2>Date/Time</h2>
+
+                <div id="misc-date"></div>
+
                 <p class="date"></p>
                 <p class="time"></p>
-            </div>
+
+                <label>Enter Birthday: </label>
+                <select id="birthday-month">
+                    <option value="top">-- Month --</option>
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                    <option value="jun">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">October</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+                </select>
+                <select id="birthday-day">
+                    <!-- use javascript to add options -->
+                </select>
+                <select id="birthday-year">
+                    <!-- use javascript to add options -->
+                    <option value="top">-- Year --</option>
+                </select>
+
+                <div id="birthday-facts"></div>
+
+            </section>
+
+            <hr />
+
+            <!-- Function Library Example -->
+            <section id="function-library-example">
+
+                <h2>Function Library Example</h2>
+
+                <input class="number-input" type="text" />
+                <p></p>
+
+            </section>
+
+            <hr />
+
+            <!-- Event Handler: onclick -->
+            <section id="event-handler-onclick">
+
+                <h2>Event Handler: onclick</h2>
+
+                <button>Change color</button>
+
+            </section>
+
+            <hr />
+
+            <!-- Event Handler: onclick II -->
+            <section id="event-handler-onclick-2">
+
+                <h2>Event Handler: onclick II</h2>
+
+            </section>
 
             <hr />
 
@@ -224,19 +335,17 @@
     <footer>
 
         <p>
-            &copy; 2017 your imagination. This isn't really copyright, this is a mockery of the
-            very concept.
+            &copy; 2017 Todd Brentlinger, Santa Cruz, CA, USA.<br />
+            Code licensed under MIT License.
         </p>
-
-        <address>
-            <p>Todd Brentlinger, Santa Cruz, CA, USA</p>
-        </address>
 
     </footer>
 
     <script src="/scripts/number-guessing-game.js"></script>
     <script src="../scripts/silly-story-generator.js"></script>
     <script src="../scripts/date-time.js"></script>
+    <script src="../scripts/function-library-example.js"></script>
+    <script src="../scripts/event-handler-examples.js"></script>
 
 </body>
 

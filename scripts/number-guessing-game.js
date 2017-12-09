@@ -15,37 +15,45 @@ guessField.focus();
 
 function checkGuess() {
     var userGuess = Number(guessField.value);
-    if (guessCount === 1) {
-        guesses.textContent = 'Previous guesses: ';
-        guesses.style.backgroundColor = 'yellow';
-        guesses.style.fontSize = '200%';
-        guesses.style.padding = '10px';
-        guesses.style.boxShadow = '3px 3px 6px black';
-    }
-    guesses.textContent += userGuess + ' ';
 
-    if (userGuess === randomNumber) {
-        lastResult.textContent = 'Congratulations! You got it right!';
-        lastResult.style.backgroundColor = 'green';
-        lowOrHi.textContent = '';
-        setGameOver();
-    } else if (guessCount === 10) {
-        lastResult.textContent = '!!!Game Over!!!';
-        setGameOver();
+    if (isNaN(userGuess)) {
+        lowOrHi.textContent += ' You need to enter a number!';
+        guessField.value = '';
+        guessField.focus();
     } else {
-        lastResult.textContent = 'Wrong!';
-        lastResult.style.backgroundColor = 'red';
+        if (guessCount === 1) {
+                guesses.textContent = 'Previous guesses: ';
+                guesses.style.backgroundColor = 'yellow';
+                guesses.style.fontSize = '200%';
+                guesses.style.padding = '10px';
+                guesses.style.boxShadow = '3px 3px 6px black';
+            }
+            guesses.textContent += userGuess + ' ';
 
-        if (userGuess < randomNumber) {
-            lowOrHi.textContent = 'Last guess was too low!';
-        } else if (userGuess > randomNumber) {
-            lowOrHi.textContent = 'Last guess was too high!';
-        }
+            if (userGuess === randomNumber) {
+                lastResult.textContent = 'Congratulations! You got it right in '
+                    + guessCount + ' guesses!';
+                lastResult.style.backgroundColor = 'green';
+                lowOrHi.textContent = '';
+                setGameOver();
+            } else if (guessCount === 10) {
+                lastResult.textContent = '!!!Game Over!!!';
+                setGameOver();
+            } else {
+                lastResult.textContent = 'Wrong!';
+                lastResult.style.backgroundColor = 'red';
+
+                if (userGuess < randomNumber) {
+                    lowOrHi.textContent = 'Last guess was too low!';
+                } else if (userGuess > randomNumber) {
+                    lowOrHi.textContent = 'Last guess was too high!';
+                }
+            }
+
+            guessCount++;
+            guessField.value = '';
+            guessField.focus();
     }
-
-    guessCount++;
-    guessField.value = '';
-    guessField.focus();
 }
 
 guessSubmit.addEventListener('click', checkGuess);
