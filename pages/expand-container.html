@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+	<meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        body {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .expand-container {
+            margin: 0.5em;
+            background-color: #466995;
+            color: white;
+        }
+
+        .expand-header {
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        .expand-header h2 {
+            display: inline-block;
+            margin: 0;
+        }
+
+        .expand-button {
+            float: right;
+            display: inline-block;
+            border: 1px solid white;
+            padding: 0.5em;
+            cursor: pointer;
+        }
+
+        .expand-header::after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+
+        .expand-body {
+            padding: 0.5em;
+            border-top: 1px solid white;
+        }
+
+        .expand-closed {
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="expand-container">
+        <div class="expand-header">
+            <div class="expand-button">
+                <span class="fa fa-plus" aria-hidden="true"></span>
+            </div>
+            <h2>Title Title Title Title Title</h2>
+        </div>
+        <div class="expand-body expand-closed">
+            <p>Test 1 Test 1 Test 1 Test 1 Test 1</p>
+            <hr />
+            <p>Test 2 Test 2 Test 2 Test 2 Test 2</p>
+            <hr />
+            <p>Test 3 Test 3 Test 3 Test 3 Test 3</p>
+        </div>
+    </div>
+
+    <script>
+
+        var expandButton = document.querySelector('.expand-button'),
+            expandBody = document.querySelector('.expand-body'),
+            expandIcon = document.querySelector('.expand-button span');
+
+        expandButton.addEventListener('click', function () {
+            console.log('function runs');
+            if (expandBody.classList.contains('expand-closed')) {
+                expandBody.classList.remove('expand-closed');
+                expandIcon.className = 'fa fa-plus';
+                console.log('contains expand-closed');
+            } else {
+                expandBody.classList.add('expand-closed');
+                expandIcon.className = 'fa fa-minus';
+                console.log('does not contain expand-closed');
+            }
+        });
+
+    </script>
+
+</body>
+</html>

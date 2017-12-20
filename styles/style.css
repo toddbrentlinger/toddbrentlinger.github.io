@@ -20,7 +20,7 @@ html {
 }
 
 body {
-    background-color: white;
+    background-color: #DBE9EE;
     /*
     max-width: 1400px;
     margin: 0 auto;
@@ -254,6 +254,32 @@ footer {
         }
 
 /* ---------------------------------------------------- */
+/* Clearfix (clear floats) */
+/* ---------------------------------------------------- */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1; /* IE 6/7 */
+}
+
+/* NOTE: If I dont' need to support anything below IE8
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+*/
+
+/* ---------------------------------------------------- */
 /* Misc Class Selectors */
 /* ---------------------------------------------------- */
 
@@ -267,6 +293,14 @@ footer {
     content: "";
     clear: both;
     display: table;
+}
+
+.inv {
+    display: none;
+}
+
+main > section > p {
+    text-indent: 50px;
 }
 
 /* ---------------------------------------------------- */
@@ -332,6 +366,15 @@ footer {
 }
 
 /* ---------------------------------------------------- */
+/* Media Container */
+/* ---------------------------------------------------- */
+
+.media-container {
+    overflow: auto;
+    text-align: center;
+}
+
+/* ---------------------------------------------------- */
 /* Expand Container */
 /* ---------------------------------------------------- */
 
@@ -349,7 +392,7 @@ footer {
 .expand-header {
     padding: 1em;
     text-align: center;
-        }
+}
 
 .expand-header h2 {
     display: inline-block;
@@ -370,12 +413,21 @@ footer {
 }
 
 .expand-body {
-    padding: 0.5em;
+    text-align: center;
+    padding: 1em;
     border-top: 2px solid #DBE9EE;
 }
 
 .expand-closed {
     display: none;
+}
+
+.expand-body .media-container h3 {
+    color: #DBE9EE;
+}
+
+.expand-container .media-container iframe {
+    border: 2px solid #DBE9EE;
 }
 
 /* ---------------------------------------------------- */

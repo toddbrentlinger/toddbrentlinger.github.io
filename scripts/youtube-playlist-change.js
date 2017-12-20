@@ -1,4 +1,28 @@
 ﻿
+// updated script
+var baseMediaContainer = document.getElementById('base-media-container'),
+mediaContainerSource = baseMediaContainer.querySelector('iframe'),
+mediaContainerHeader = baseMediaContainer.querySelector('h3');
+
+document
+    .getElementById('playlist')
+    .addEventListener('change', function () {
+
+        var target = document.getElementById(this.value); // target anchor link to be added to iframe src
+
+        if (target != null) {
+            baseMediaContainer.className = 'vis';
+            mediaContainerHeader.textContent = target.textContent;
+            mediaContainerSource.src = target.href;
+        } else if (this.value === '') { // else if target is null and value is top blank option("make a choice" prompt)
+            baseMediaContainer.className = 'inv';
+            mediaContainerHeader.textContent = '';
+            mediaContainerSource.src = '';
+        }
+    });
+
+// old script
+/*
 var baseMediaContainer = document.getElementById('base-media-container'),
     mediaContainerSource = baseMediaContainer.querySelector('iframe'),
     mediaContainerHeader = baseMediaContainer.querySelector('h3');
@@ -24,7 +48,7 @@ document
             }
         }
     });
-
+*/
 /*
 var baseMediaContainer = document.getElementById('base-media-container');
 var mediaContainerSource = baseMediaContainer.querySelector('iframe');

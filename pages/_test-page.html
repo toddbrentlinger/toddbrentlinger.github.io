@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <!-- jQuery script -->
+    <script src="../scripts/jQuery/jquery-3.2.1.min.js"></script>
+    <style>
+        h1 {
+    margin: 0px;
+    padding: 5px;
+}
+
+.front {
+    background: #d0d0ff;
+    height: 200px;
+    width: 100vw;
+    padding: 5px;
+}
+
+.main {
+    background: #d0ffd0;
+    height: 1000px;
+    width: 100vw;
+    padding: 5px;
+}
+
+#sticky {
+    background: #000000;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    width: 100vw;
+}
+
+#sticky-phantom {
+    background: #000000;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    width: 100vw;
+    visibility: hidden;
+}
+
+#sticky.stick {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <div class="front">
+        <h1>Front matter</h1>
+        The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
+    </div>
+
+    <div id="content-anchor"></div>
+    <div id="sticky-phantom">This turns sticky</div>
+    <div id="sticky">This turns sticky</div>
+
+    <div class="main">
+        <h1>Main document</h1>
+        The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
+    </div>
+
+    <script>
+        function sticky_relocate() {
+            var window_top = $(window).scrollTop();
+            var div_top = $('#content-anchor').offset().top;
+            if (window_top > div_top) {
+                $('#sticky').addClass('stick');
+                $('#sticky-phantom').show();
+            } else {
+                $('#sticky').removeClass('stick');
+                $('#sticky-phantom').hide();
+            }
+        }
+
+        $(function () {
+            $(window).scroll(sticky_relocate);
+            sticky_relocate();
+        });
+    </script>
+
+</body>
+</html>
