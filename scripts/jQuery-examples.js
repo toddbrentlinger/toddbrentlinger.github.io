@@ -86,7 +86,6 @@
     function ChangeTopNav() {
         // if current scroll position is below the topnav position
         if ($(window).scrollTop() > topNavDistance) {
-            console.log('Fixed');
             // add fixed class to topNav
             $topNav.addClass('fixed');
             // remove absolute position class from topnav
@@ -94,7 +93,6 @@
             // reset top positioning to 0
             $topNav.css('top', '0');
         } else {
-            console.log('Absolute');
             // remove fixed class from topNav
             $topNav.removeClass('fixed');
             // add absolute position class to topnav
@@ -104,8 +102,11 @@
         }
     }
 
-    // window scroll event, run ChangeTopNav initially
+    // window scroll event
     $(window).scroll(ChangeTopNav);
+
+    // run ChangeTopNav() initially to make topnav absolute position
+    ChangeTopNav();
 
     // add margin-bottom to header to compensate for topnav being removed from document flow
     $('header').css('margin-bottom', topNavHeight);

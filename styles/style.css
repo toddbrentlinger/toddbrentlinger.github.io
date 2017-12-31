@@ -445,6 +445,24 @@ main > section > p {
             background-color: #F2F2F2;
         }
 */
+
+/* ---------------------------------------------------- */
+/* jQuery - Fixed menu after scrolling */
+/* ---------------------------------------------------- */
+
+.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.topnav-absolute {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+}
+
 /* ---------------------------------------------------- */
 /* Social Media Logos */
 /* ---------------------------------------------------- */
