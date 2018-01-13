@@ -16,7 +16,7 @@ guessField.focus();
 function checkGuess() {
     var userGuess = Number(guessField.value);
 
-    if (isNaN(userGuess)) {
+    if (isNaN(userGuess) || userGuess === 0) {
         lowOrHi.textContent += ' You need to enter a number!';
         guessField.value = '';
         guessField.focus();

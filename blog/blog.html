@@ -6,23 +6,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Todd Brentlinger's Website</title>
+    <title>Blog | Todd Brentlinger's Website</title>
 
     <!-- Stylesheets -->
     <!--
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
      -->
-    <link rel="stylesheet" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
 
     <meta name="author" content="Todd Brentlinger" />
 
     <!-- Note: Attribute name="description" is used for search engines. Include
         keywords relating to the webpage to optimize Search Engine Optimization (SEO) -->
-    <meta name="description" content="Todd Brentlinger's personal website" />
+    <meta name="description" content="Todd Brentlinger's personal blog" />
 
     <!-- jQuery script -->
-    <script src="/scripts/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="../scripts/jQuery/jquery-3.2.1.min.js"></script>
     <!-- Google CDN for jQuery
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     Many users already have downloaded jQuery from Google or Microsoft when visiting another site.
@@ -30,9 +30,34 @@
     loading time. Also, most CDN's will make sure that once a user requests a file from it, it
     will be served from the server closest to them, which also leads to faster loading time.
     -->
+
     <!-- Can put scripts in head section since all jQuery methods in
         the following scripts are inside a jquery document ready function -->
-    <script src="/scripts/jquery-fixed-nav-after-scroll.js"></script>
+    <script src="../scripts/jquery-fixed-nav-after-scroll.js"></script>
+
+    <style>
+
+        /* Blog Post */
+        .blog-post {
+            width: 80%;
+        }
+
+        /* Blog Header */
+        .blog-post > h2 {
+            text-align: initial; /* reset text-align of h2 to default value of left */
+        }
+
+        /* Blog Date */
+        .blog-post > time {
+            font-style: italic;
+        }
+
+        /* Blog Entry Paragraphs */
+        .blog-post > p {
+            text-indent: 50px; /* indent start of all paragraphs after date */
+        }
+
+    </style>
 
 </head>
 
@@ -40,20 +65,20 @@
 
     <!-- Header -->
     <header>
-        <h1>Todd Brentlinger's Website</h1>
+        <h1>Todd Brentlinger's Blog</h1>
     </header>
 
     <!-- Top Navigation -->
     <nav id="topnav">
         <ul>
-            <li><a class="active-page" href="index.html"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
-            <li><a href="/professional/professional.html">Professional</a></li>
-            <li><a href="/personal/personal.html">Personal</a></li>
-            <li><a href="/social/social.html">Social</a></li>
-            <li><a href="/blog/blog.html">Blog</a></li>
-            <li><a href="/bond/bond-rank.html">James Bond</a></li>
-            <li><a href="/javascript/javascript-examples.html">JavaScript</a></li>
-            <li><a href="/jquery/jquery-examples.html">jQuery</a></li>
+            <li><a href="../index.html"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
+            <li><a href="../professional/professional.html">Professional</a></li>
+            <li><a href="../personal/personal.html">Personal</a></li>
+            <li><a href="../social/social.html">Social</a></li>
+            <li><a class="active-page" href="#">Blog</a></li>
+            <li><a href="../bond/bond-rank.html">James Bond</a></li>
+            <li><a href="../javascript/javascript-examples.html">JavaScript</a></li>
+            <li><a href="../jquery/jquery-examples.html">jQuery</a></li>
         </ul>
     </nav>
 
@@ -63,8 +88,7 @@
         <nav id="sidenav" class="column left">
             <!-- nav/aside/div element? -->
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">Blog Post</a></li>
             </ul>
 
         </nav>
@@ -72,30 +96,63 @@
         <!-- Middle Column -->
         <main class="column middle">
 
-            <section>
+            <!-- Base Blog Post -->
+            <section class="blog-post inv">
+                <h2>[Blog Post Title]</h2>
+                <time datetime="">DayOfWeek Month Day<sup>th/st</sup>, Year</time>
+                <p>[Blog Post Entry]</p>
+            </section>
 
-                <h2>Hello World!</h2>
+            <!-- January 12, 2018 -->
+            <section class="blog-post">
 
-                <div class="image-container float-left">
-                    <img src="/images/todd-brentlinger-profile-pic.jpg" alt="My Profile Picture"
-                         width="250" height="250" />
-                </div>
+                <h2>New Year's Resolutions</h2>
+
+                <time datetime="2018-01-12">Friday January 12<sup>th</sup>, 2018</time>
+
+                <p>Happy New Years!</p>
+
+                <p>Here's hoping this next year will be nothing like the last.</p>
 
                 <p>
-                    Hello, I'm <strong><em>Todd Brentlinger</em></strong>. Welcome to My Website!<br />
-                    Please forgive the stupid simplicity of this website. I'm using it to
-                    learn HTML &amp; CSS.
+                    Get a job, get a girlfriend, lose weight, get in shape, blah, blah, blah... I get a sense of déjà vu around this time every year for some
+                    strange reason.
                 </p>
 
             </section>
 
-            
+            <hr />
+
+            <!-- December 10, 2017 -->
+            <section class="blog-post">
+
+                <h2>My 30th Birthday</h2>
+
+                <time datetime="2017-12-10">Sunday December 10<sup>th</sup>, 2017</time>
+
+                <p>[Blog Post Entry]</p>
+                
+                <p>I feel like I've wasted my twenties.</p>
+
+            </section>
 
             <hr />
 
-            <section id="about">
+            <!-- October 21, 2017 -->
+            <section class="blog-post">
 
-                <h2 title="I'm a tooltip">About</h2>
+                <h2>My First Blog Post</h2>
+
+                <time datetime="2017-10-21">Saturday October 21<sup>st</sup>, 2017</time>
+
+                <p>
+                    [First entry blog post] Today is the day I created this website.
+                </p>
+
+                <p> 
+                    Why did I create a personal website? Something to do in my free time, keep my mind stimulated, 
+                    act like a portfolio to show potential employers, etc.
+                </p>
 
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -105,22 +162,9 @@
                     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
 
-                <p>
-                    Praesent ultrices magna vel ex condimentum egestas. Nulla egestas et leo auctor condimentum. 
-                    Phasellus euismod orci et tortor hendrerit lacinia. Ut blandit, velit sed tempus ultricies, 
-                    nisl arcu ullamcorper neque, ac sodales mi neque nec odio. Phasellus laoreet dolor sit amet 
-                    velit dictum, nec laoreet magna fringilla. In eu cursus ex. Sed diam felis, lacinia at facilisis 
-                    et, varius non odio. Maecenas elementum congue commodo. Etiam eget dictum metus, eu interdum 
-                    ligula. Sed fermentum vitae libero id iaculis. Aliquam a turpis arcu. Suspendisse id dapibus 
-                    tellus. Integer non enim eu velit vestibulum volutpat eget nec felis. Pellentesque eros leo, 
-                    fringilla sit amet lobortis eu, vestibulum non magna.
-                </p>
-
             </section>
 
             <hr />
-
-            <h3><a href="/pages/old-index.html">old-index.html</a></h3>
 
         </main>
 
