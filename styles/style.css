@@ -55,6 +55,10 @@ ul {
     padding-left: 40px;
 }
 
+section > p {
+    line-height: 1.2;
+}
+
 /* ---------------------------------------------------- */
 /* Header */
 /* ---------------------------------------------------- */
@@ -107,13 +111,17 @@ footer {
 }
 
 /* Style the top navigation links */
-#topnav a:link, #topnav a:visited {
+#topnav a {
     display: inline-block;
     font-size: 1rem; /* 16px: reset font-size after setting to zero in #topnav ul {} to 
         prevent space between inline-block elements */
-    color: #466995;
     padding: 0.875em 1em; /* 14px 16px (1em=16px) */
     text-decoration: none;
+}
+
+/* Set color on default link and active pseudo-classes */
+#topnav a:link, #topnav a:visited {
+    color: #466995;
 }
 
 /* Change the color on hover */
@@ -246,12 +254,12 @@ footer {
 
 /* Thematic break hr */
 .column.middle>hr {
-            border: 0;
-            height: 2px;
-            background-image: linear-gradient(to right, 
-            rgba(0,0,0,0), rgb(70,105,149) 30%, 
-            rgb(70,105,149) 70%, rgba(0,0,0,0));
-        }
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, 
+    rgba(0,0,0,0), rgb(70,105,149) 30%, 
+    rgb(70,105,149) 70%, rgba(0,0,0,0));
+}
 
 /* ---------------------------------------------------- */
 /* Clearfix (clear floats) */

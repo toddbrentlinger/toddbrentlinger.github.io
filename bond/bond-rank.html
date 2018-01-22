@@ -36,6 +36,29 @@
     <script src="../scripts/jquery-fixed-nav-after-scroll.js"></script>
 
     <style type="text/css">
+        #bond > section > div:first-child {
+            display: inline-block;
+            margin: 0 auto 0.83em auto;
+        }
+
+        #bond > section > div:first-child > h2 {
+            display: inline-block;
+            position: relative;
+            top: 20px;
+        }
+
+        #bond > section > div:first-child > img {
+            float: right;
+            border: 5px solid #ddd;
+            border-radius: 50%;
+            margin: 5px 10px;
+            /* image to scale down if it has to, but never scale up to be larger than its original size */
+            max-width: 100%;
+            height: auto;
+            /* box shadow */
+            box-shadow: 0 0 8px 5px rgba(0,0,0,0.2);
+        }
+
         #bond {
             text-align: center;
             /*border: 15px solid #267257;*/
@@ -180,16 +203,27 @@
                 <li>Die Another Day</li>
             </ol>
 
-            <h2 id="connery">Sean Connery:</h2>
+            <section id="connery">
 
-            <ol>
-                <li>Goldfinger</li>
-                <li>From Russia With Love</li>
-                <li>Dr. No</li>
-                <li>You Only Live Twice</li>
-                <li>Thunderball</li>
-                <li>Diamonds Are Forever</li>
-            </ol>
+                <div>
+
+                    <h2>Sean Connery:</h2>
+
+                    <img src="images/bond-connery-square.png" alt="Sean Connery in gun barrel"
+                         width="125" height="125" />
+                    
+                </div>
+
+                <ol>
+                    <li>Goldfinger</li>
+                    <li>From Russia With Love</li>
+                    <li>Dr. No</li>
+                    <li>You Only Live Twice</li>
+                    <li>Thunderball</li>
+                    <li>Diamonds Are Forever</li>
+                </ol>
+
+            </section>
 
             <h2 id="lazenby">George Lazenby:</h2>
 
@@ -999,6 +1033,7 @@
     </footer>
 
     <script src=""></script>
+    <script src="../scripts/_my-developer-tools.js"></script>
 
 </body>
 
