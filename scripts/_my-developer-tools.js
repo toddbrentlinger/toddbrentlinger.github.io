@@ -15,7 +15,7 @@ panel.style.border = "3px solid #466995";
 panel.style.padding = "0.3em";
 
 // add dev tools panel to document
-document.querySelector('html').appendChild(panel);
+document.querySelector('body').appendChild(panel);
 
 /* Header for Dev Tools Panel */
 
