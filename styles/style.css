@@ -507,8 +507,14 @@ main > section > p {
 /* Responsive Layout */
 /* ---------------------------------------------------- */
 
-/* Responsive layout - makes the three columns stack on top of each other
-    instead of next to each other */
+@media (min-width:1601px) {
+    /* For greater than laptop */
+    html {
+        font-size: 100%;
+    }
+}
+
+/* makes the three columns stack on top of each other, instead of next to each other */
 @media (max-width:800px) {
     /* For tablet: */
     .column.left, .column.middle, .column.right {

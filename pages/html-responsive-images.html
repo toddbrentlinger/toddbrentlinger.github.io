@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>HTML: Responsive Images | Todd Brentlinger's Website</title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Todd Brentlinger" />
+    <style>
+        #profile-pic {
+            float: left;
+            padding-right: 1em;
+            min-width: 250px;
+            width: 30%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 0; /* prevent IE9 (and earlier) from displaying a border around the edges */
+        }
+        
+        #profile-pic + p::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #profile-pic + p {
+            text-indent: 50px;
+        }
+        
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Responsive Image</h2>
+
+    <p id="img-source"></p>
+    <p id="img-width"</p>
+    <p id="window-width"></p>
+
+    <img id="profile-pic"
+         srcset="../images/todd-brentlinger-profile-250w.jpg 250w,
+                 ../images/todd-brentlinger-profile-480w.jpg 480w,
+                 ../images/todd-brentlinger-profile-pic.jpg 960w"
+         sizes="(max-width: 480px) 250px,
+                (max-width: 1200px) 480px,
+                960px"
+         src="../images/todd-brentlinger-profile-480w.jpg" alt="Profile picture of me, Todd Brentlinger" />
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum porttitor erat, ac varius tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam diam sapien, posuere eu mauris vitae, lobortis ultricies dolor. Nullam tristique sapien in purus sagittis lobortis. Morbi id urna at diam porttitor egestas efficitur pharetra arcu. Donec pellentesque nisi lectus, ac accumsan lacus blandit eget. Sed ipsum mauris, imperdiet vitae felis rhoncus, eleifend fermentum erat. Morbi luctus libero id est fermentum, non condimentum urna vehicula. Praesent euismod libero in arcu sollicitudin, sed consectetur dui tristique. Quisque et mi nec leo lacinia interdum. Fusce ac turpis mauris. Vivamus id enim sem. Cras nunc lectus, sodales ut rutrum vel, efficitur vitae turpis. Proin malesuada urna vitae bibendum consequat. Duis nec posuere erat. Morbi nec auctor lectus, et fringilla eros.<br />
+        Donec hendrerit, est vitae bibendum suscipit, massa quam convallis ante, vitae luctus leo quam quis purus. Curabitur consectetur ac leo eu elementum. Proin egestas malesuada justo vitae scelerisque. Vestibulum suscipit dui eget felis scelerisque scelerisque. Aliquam placerat dolor risus. Morbi vestibulum, ligula a dignissim rhoncus, augue enim rutrum neque, tristique vehicula diam dolor nec nibh. Donec bibendum elementum ex, in faucibus eros molestie nec. Nam bibendum nulla ac velit scelerisque, non rutrum mauris mattis. Nunc eget dui non mauris tempor ornare eget vitae enim. Sed tincidunt justo eget magna eleifend, sed sagittis massa pharetra. Aenean id nunc felis. Curabitur consequat cursus elit nec condimentum. In vulputate ac dui ut egestas. Nam sed porta mi, sed auctor nisl.<br />
+        Duis iaculis rhoncus egestas. Ut id efficitur risus. Suspendisse rhoncus, diam a cursus iaculis, tortor dui fringilla mi, quis pellentesque odio est at quam. In hac habitasse platea dictumst. Vestibulum dictum pharetra venenatis. Nulla facilisi. Pellentesque suscipit condimentum nibh ac commodo. Morbi accumsan elementum felis, quis vulputate velit aliquam non. Morbi feugiat suscipit libero, at efficitur dolor facilisis sit amet. Suspendisse luctus lectus ut massa euismod euismod. Quisque rutrum leo eu arcu interdum consectetur.<br />
+        Etiam sed eros quis nisl feugiat lobortis. Fusce ultricies ac quam eget sollicitudin. Integer finibus sit amet nunc quis iaculis. Duis fringilla dolor nec massa faucibus, non rutrum nibh feugiat. Duis quis tempus lacus. Maecenas ullamcorper et urna et eleifend. Quisque pellentesque imperdiet orci, eget aliquet neque mollis et. Nullam rhoncus tellus tortor, a euismod libero interdum sed. Nam sed neque imperdiet, faucibus lectus ac, commodo sapien. Cras eros ipsum, tristique eu nunc vel, mattis consequat enim. Sed eu sodales sem. Donec urna nibh, auctor aliquet tellus efficitur, scelerisque facilisis libero. Duis auctor nisl tortor, ut sagittis ipsum condimentum id. Sed ornare nisl nec elit feugiat, vitae ultricies enim tempus. Duis nec augue facilisis, lacinia eros sed, varius elit. Suspendisse et fermentum sem.
+        Ut non lectus dolor. Integer blandit finibus ante ac aliquam. Aliquam erat volutpat. Nunc turpis nibh, dictum sed tincidunt non, tincidunt at tellus. Nunc porttitor, eros at lobortis placerat, mauris risus pulvinar neque, hendrerit molestie felis augue in justo. Praesent eu nulla ornare, placerat neque non, pellentesque purus. Maecenas pellentesque nec velit eget posuere. Nullam suscipit id sem vel hendrerit.
+    </p>
+
+    <script>
+        var source = document.getElementById('img-source'),
+            imgWidth = document.getElementById('img-width'),
+            windowWidth = document.getElementById('window-width'),
+            image = document.getElementById('profile-pic');
+
+        function ChangeData() {
+            source.textContent = 'Image Source: ' + image.currentSrc;
+            imgWidth.textContent = 'Image Width: ' + image.width;
+            windowWidth.textContent = 'Window Width: ' + window.innerWidth;
+        };
+        ChangeData();
+
+        window.onresize = ChangeData;
+    </script>
+</body>
+</html>

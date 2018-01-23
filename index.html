@@ -34,6 +34,29 @@
         the following scripts are inside a jquery document ready function -->
     <script src="/scripts/jquery-fixed-nav-after-scroll.js"></script>
 
+    <style>
+
+        /* Profile pic img element */
+
+        #profile-pic {
+            float: left;
+            padding-right: 1em;
+            min-width: 250px;
+            width: 30%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 0; /* prevent IE9 (and earlier) from displaying a border around the edges */
+        }
+        
+        #profile-pic + p::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -76,9 +99,15 @@
 
                 <h2>Hello World!</h2>
 
-                <div class="image-container float-left">
-                    <img src="/images/todd-brentlinger-profile-250w.jpg" alt="Profile picture of me, Todd Brentlinger" />
-                </div>
+                <img id="profile-pic"
+                     srcset="../images/todd-brentlinger-profile-250w.jpg 250w,
+                             ../images/todd-brentlinger-profile-480w.jpg 480w,
+                             ../images/todd-brentlinger-profile-pic.jpg 960w"
+                     sizes="(max-width: 480px) 250px,
+                            (max-width: 1200px) 480px,
+                            960px"
+                     src="../images/todd-brentlinger-profile-480w.jpg" 
+                     alt="Profile picture of me, Todd Brentlinger" />
 
                 <p>
                     Hello, I'm <strong><em>Todd Brentlinger</em></strong>. Welcome to My Website!<br />
@@ -87,8 +116,6 @@
                 </p>
 
             </section>
-
-            
 
             <hr />
 
@@ -192,7 +219,7 @@
     </footer>
 
     <script src=""></script>
-    <script src="scripts/_my-developer-tools.js"></script>
+    <script src="scripts/my-developer-tools.js"></script>
 
 </body>
 
