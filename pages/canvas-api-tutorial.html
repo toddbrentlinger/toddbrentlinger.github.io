@@ -41,8 +41,8 @@
             // retrieve node in DOM representing canvas
             var canvas = document.getElementById('canvas-tutorial');
 
-            var WIDTH = document.documentElement.clientWidth;
-            var HEIGHT = document.documentElement.clientHeight;
+            var WIDTH = document.body.clientWidth;
+            var HEIGHT = document.body.clientHeight;
 
             canvas.width = WIDTH;
             canvas.height = HEIGHT;
@@ -69,7 +69,7 @@
         }
 
         // call draw function when page loads
-        document.getElementById('cavas-tutorial').onload = Draw();
+        document.getElementById('canvas-tutorial').onload = Draw();
 
     </script>
 

@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>James Bond Trivia</title>
+	<meta charset="utf-8" />
+    
+    <style>
+        #bond-trivia {
+            width: 50%;
+            margin: 0 auto;
+            border: 2px solid black;
+            padding: 1em;
+            text-align: center;
+        }
+
+        #bond-trivia-choices > p {
+            display: inline-block;
+            padding: 1em 2em;
+            border: 1px solid black;
+            margin: 0 0 1.25em 0; /* margin of h2 is 0.83em with font-size 1.5em; product is 1.25em */
+            cursor: pointer;
+        }
+
+        #bond-trivia-choices > p:hover, #bond-trivia-choices > p:focus {
+            background-color: #ccc;
+        }
+
+        #bond-trivia-choices > p.selected-answer {
+            background-color: #000;
+            color: #fff;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <section id="bond-trivia">
+
+        <h1>James Bond Trivia:</h1>
+
+        <h2>Question: </h2>
+        <p id="bond-trivia-question"></p>
+        <h2>Choices: </h2>
+        <div id="bond-trivia-choices"></div>
+
+        <button id="bond-trivia-submit">Submit</button>
+
+        <p id="bond-trivia-response"></p>
+
+        <h2 id="bond-trivia-score">Score: </h2>
+
+    </section>
+
+    <script>
+
+        // Variables: references to elements in document
+        var questionPara = document.getElementById('bond-trivia-question'),
+            choicesDiv = document.getElementById('bond-trivia-choices'),
+            responsePara = document.getElementById('bond-trivia-response'),
+            scoreHeading = document.getElementById('bond-trivia-score'),
+            submitBtn = document.getElementById('bond-trivia-submit');
+
+        // Class: base class for single Bond trivia object containing question, answer,
+        // and array of wrong answers
+        class Trivia {
+            constructor(question, answer, wrongChoices) {
+                this.question = question;
+                this.answer = answer;
+                this.wrongChoices = wrongChoices;
+            }
+        }
+
+        // array of bond trivia objects
+        // new Trivia(questionString, answerString, wrongChoiceArray)
+        var bondTriviaOptions = [
+            new Trivia('Who was the first actor to play James Bond in a theatrical film?', 'Sean Connery', ['Roger Moore', 'George Lazenby', 'Barry Nelson']),
+            new Trivia('Who was the second actor to play James Bond in a theatrical film?', 'George Lazenby', ['Roger Moore', 'Sean Connery', 'Barry Nelson']),
+            new Trivia('Who was the third actor to play James Bond in a theatrical film?', 'Roger Moore', ['Timothy Dalton', 'George Lazenby', 'Barry Nelson'])
+        ];
+
+        // Function: return random trivia object from array
+        function getRandomTrivia() {
+            return bondTriviaOptions[Math.floor(Math.random() * bondTriviaOptions.length)];
+        }
+
+        // variables for current game with initial/default values
+        var currentTriviaObj = getRandomTrivia(),
+            currentQuestion = currentTriviaObj.question,
+            currentAnswer = currentTriviaObj.answer,
+            currentChoices = randomSortChoices(),
+            score = 0;
+
+        // Function: randomly sort all choices together, return new array
+        function randomSortChoices() {
+            // add correct answer to wrong choices array in new variable
+            var randomizedChoices = currentTriviaObj.wrongChoices.concat(currentTriviaObj.answer);
+
+            // Function: Shuffle array (Fisher-Yates algorithm; css-tricks.com)
+            function shuffle(arr) {
+                for (var j, x, i = arr.length;
+                    i;
+                    j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+                return arr;
+            }
+
+            return shuffle(randomizedChoices);
+        }
+
+        // Function: add .selected class to choice user clicks on
+        function SelectAnswer(event) {
+            // remove .selected class from each choice
+            var arrChoices = document.querySelectorAll('#bond-trivia-choices > p');
+            for (var i = 0; i < arrChoices.length; i++) {
+                if (arrChoices[i].classList.contains('selected-answer')) {
+                    arrChoices[i].classList.remove('selected-answer');
+                }
+            }
+
+            // add .selected class to choice clicked on by user in which this function is invoked
+            event.target.classList.add('selected-answer');
+        }
+
+        // Function: add event handler to each choice
+        function addEventHandlers() {
+            // Event Handler: add function to onclick event handler on each choice
+            var arrChoices = document.querySelectorAll('#bond-trivia-choices > p');
+            for (var i = 0; i < arrChoices.length; i++) {
+                arrChoices[i].onclick = SelectAnswer;
+            }
+        }
+
+        // Function: display trivia object
+        function displayTrivia() {
+
+            // display question
+            questionPara.textContent = currentQuestion;
+
+            // display randomly sorted choices with answer positioned randomly amongst choices
+            for (var i = 0; i < currentChoices.length; i++) {
+                choicesDiv.appendChild(document.createElement('p')).textContent = currentChoices[i];
+            }
+
+            // add event handlers to choices
+            addEventHandlers();
+
+            // display score
+            scoreHeading.textContent = 'Score: ' + score;
+        }
+        displayTrivia();
+
+        // Event Handler: if submit button is pressed, run function to test trivia question
+        submitBtn.onclick = function () {
+
+            // get selected choice
+            var selectedChoice = choicesDiv.querySelector('.selected-answer');
+
+            // if selected choice is equal to right answer, increment score and display message, add border to right answer
+            if (selectedChoice.textContent === currentTriviaObj.answer) {
+                score += 5;
+                scoreHeading.textContent = 'Score: ' + score;
+                responsePara.textContent = 'Correct! +5 points';
+            } else {
+                score -= 5;
+                responsePara.textContent = 'Wrong -5 points';
+                scoreHeading.textContent = 'Score: ' + score;
+            }
+
+            // reset trivia option
+            // get new random trivia
+            currentTriviaObj = getRandomTrivia();
+            currentQuestion = currentTriviaObj.question;
+            currentAnswer = currentTriviaObj.answer;
+            currentChoices = randomSortChoices();
+            // remove elements from previous trivia
+            var arrChoices = document.querySelectorAll('#bond-trivia-choices > p');
+            for (var i = 0; i < arrChoices.length; i++) {
+                arrChoices[i].remove();
+            }
+            // display new trivia
+            displayTrivia();
+        }
+
+        function playGame() {
+
+        }
+        playGame();
+
+    </script>
+
+</body>
+</html>

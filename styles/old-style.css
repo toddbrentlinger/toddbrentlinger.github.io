@@ -20,9 +20,10 @@ html {
 }
 
 body {
-    background-color: white;
+    background-color: #DBE9EE;
     /*
-    max-width: 1400px;
+    max-width: 1200px;
+    min-width: 360px;
     margin: 0 auto;
     padding: 0 20px 20px 20px;
     border: 3px solid black;
@@ -53,6 +54,10 @@ p {
 ul {
     margin: 1em 0;
     padding-left: 40px;
+}
+
+section > p {
+    line-height: 1.2;
 }
 
 /* ---------------------------------------------------- */
@@ -107,13 +112,17 @@ footer {
 }
 
 /* Style the top navigation links */
-#topnav a:link, #topnav a:visited {
+#topnav a {
     display: inline-block;
     font-size: 1rem; /* 16px: reset font-size after setting to zero in #topnav ul {} to 
         prevent space between inline-block elements */
-    color: #466995;
     padding: 0.875em 1em; /* 14px 16px (1em=16px) */
     text-decoration: none;
+}
+
+/* Set color on default link and active pseudo-classes */
+#topnav a:link, #topnav a:visited {
+    color: #466995;
 }
 
 /* Change the color on hover */
@@ -246,12 +255,38 @@ footer {
 
 /* Thematic break hr */
 .column.middle>hr {
-            border: 0;
-            height: 2px;
-            background-image: linear-gradient(to right, 
-            rgba(0,0,0,0), rgb(70,105,149) 30%, 
-            rgb(70,105,149) 70%, rgba(0,0,0,0));
-        }
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, 
+    rgba(0,0,0,0), rgb(70,105,149) 30%, 
+    rgb(70,105,149) 70%, rgba(0,0,0,0));
+}
+
+/* ---------------------------------------------------- */
+/* Clearfix (clear floats) */
+/* ---------------------------------------------------- */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1; /* IE 6/7 */
+}
+
+/* NOTE: If I dont' need to support anything below IE8
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+*/
 
 /* ---------------------------------------------------- */
 /* Misc Class Selectors */
@@ -267,6 +302,14 @@ footer {
     content: "";
     clear: both;
     display: table;
+}
+
+.inv {
+    display: none;
+}
+
+main > section > p {
+    text-indent: 50px;
 }
 
 /* ---------------------------------------------------- */
@@ -332,6 +375,15 @@ footer {
 }
 
 /* ---------------------------------------------------- */
+/* Media Container */
+/* ---------------------------------------------------- */
+
+.media-container {
+    overflow: auto;
+    text-align: center;
+}
+
+/* ---------------------------------------------------- */
 /* Expand Container */
 /* ---------------------------------------------------- */
 
@@ -349,7 +401,7 @@ footer {
 .expand-header {
     padding: 1em;
     text-align: center;
-        }
+}
 
 .expand-header h2 {
     display: inline-block;
@@ -370,12 +422,21 @@ footer {
 }
 
 .expand-body {
-    padding: 0.5em;
+    text-align: center;
+    padding: 1em;
     border-top: 2px solid #DBE9EE;
 }
 
 .expand-closed {
     display: none;
+}
+
+.expand-body .media-container h3 {
+    color: #DBE9EE;
+}
+
+.expand-container .media-container iframe {
+    border: 2px solid #DBE9EE;
 }
 
 /* ---------------------------------------------------- */
@@ -393,6 +454,24 @@ footer {
             background-color: #F2F2F2;
         }
 */
+
+/* ---------------------------------------------------- */
+/* jQuery - Fixed menu after scrolling */
+/* ---------------------------------------------------- */
+
+.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.topnav-absolute {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+}
+
 /* ---------------------------------------------------- */
 /* Social Media Logos */
 /* ---------------------------------------------------- */
@@ -429,8 +508,7 @@ footer {
 /* Responsive Layout */
 /* ---------------------------------------------------- */
 
-/* Responsive layout - makes the three columns stack on top of each other
-    instead of next to each other */
+/* makes the three columns stack on top of each other, instead of next to each other */
 @media (max-width:800px) {
     /* For tablet: */
     .column.left, .column.middle, .column.right {

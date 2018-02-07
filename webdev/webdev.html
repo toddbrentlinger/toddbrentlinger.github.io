@@ -19,11 +19,11 @@
 
     <!-- Note: Attribute name="description" is used for search engines. Include
         keywords relating to the webpage to optimize Search Engine Optimization (SEO) -->
-    <meta name="description" content="Todd Brentlinger's web development personal website" />
+    <meta name="description" content="Todd Brentlinger's web development portfolio" />
 
     <!-- Facebook Metadata -->
     <meta property="og:image" content="" />
-    <meta property="og:description" content="Todd Brentlinger's web development personal website" />
+    <meta property="og:description" content="Todd Brentlinger's web development portfolio" />
     <meta property="og:title" content="Web Development | Todd Brentlinger's Website" />
 
     <!-- Twitter -->
@@ -43,27 +43,180 @@
         the following scripts are inside a jquery document ready function -->
     <script src="../scripts/jquery-fixed-nav-after-scroll.js"></script>
 
+    <style>
+
+        /* Middle Section Top Buttons */
+
+        #main-top-buttons {
+            text-align: center; /* center inline child elements */
+        }
+
+        #main-top-buttons div.button {
+            display: inline-block;
+        }
+
+        /* Java section */
+
+        #java-examples > section {
+            max-width: 600px;
+            width: 70%;
+            margin: 1em auto;
+        }
+
+        /* Number Guessing Game */
+
+        #number-guessing {
+            text-align: center;
+        }
+
+        /* Silly Story Generator */
+
+        #silly-story {
+            font-family: helvetica, sans-serif;
+        }
+        
+        #silly-story label {
+            font-weight: normal;
+        }
+        
+        #silly-story div {
+            text-align: center;
+            padding-bottom: 1em;
+        }
+        
+        #silly-story input[type="text"] {
+            padding: 5px;
+            width: 150px;
+        }
+        
+        #silly-story p {
+            background: #FFC125;
+            color: #5E2612;
+            padding: 10px;
+            visibility: hidden;
+        }
+
+        /* Function Library Example */
+
+        #function-library-example {
+            text-align: center;
+        }
+
+        #function-library-example input {
+            font-size: 1.5em;
+            margin: 10px 1px 0;
+        }
+
+        /* Event Handler: onclick */
+
+        #event-handler-onclick {
+            max-width: initial;
+            width: 100%;
+            padding-bottom: 3em;
+            text-align: center;
+        }
+
+        /* Event Handler: onclick II */
+
+        #event-handler-onclick-2 div {
+            background-color: red;
+            height: 100px;
+            width: 25%;
+            float: left;
+        }
+
+        /* clear floats */
+        #event-handler-onclick-2::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Websites list */
+
+        #websites ul {
+            width: 30%;
+            min-width: 18.75em;
+            margin: 0 auto;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.4);
+            border-left: 5px solid #267257;
+            background-color: #F2F2F2;
+        }
+
+        /* MDN: Learning Web Development */
+
+        #mdn-java, #mdn-css, #mdn-html {
+            width: 30%;
+            float: left;
+        }
+
+        #mdn-css {
+            width: 30%;
+            float: left;
+            margin-left: 5%;
+        }
+
+        #mdn-html {
+            width: 30%;
+            float: right;
+        }
+
+        #mdn-web-dev::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        @media (max-width:1100px) {
+            #mdn-java, #mdn-css, #mdn-html {
+                width: 100%;
+            }
+        }
+
+        #mdn-web-dev .button {
+            width: 100%;
+        }
+
+        /* Misc Web Dev Examples */
+
+        #misc-examples .flex-container {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .flex-container > .button {
+            flex: 30%;
+        }
+
+        .flex-container > .button > a {
+            display: block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
     <!-- Header -->
     <header>
-        <h1>[Webpage Title]</h1>
+        <h1>Web Development</h1>
     </header>
 
     <!-- Top Navigation -->
     <nav id="topnav">
         <ul>
             <li><a href="../index.html"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
-            <li><a href="../professional/professional.html">Professional</a></li>
+            <li><a class="active-page" href="#">Web Development</a></li>
+            <li><a href="../programming/programming.html">Programming</a></li>
+            <li><a href="../engineering/engineering.html">Engineering</a></li>
             <li><a href="../personal/personal.html">Personal</a></li>
-            <li><a href="../social/social.html">Social</a></li>
             <li><a href="../blog/blog.html">Blog</a></li>
             <li><a href="../bond/bond-rank.html">James Bond</a></li>
-            <li><a href="../javascript/javascript-examples.html">JavaScript</a></li>
-            <li><a href="../jquery/jquery-examples.html">jQuery</a></li>
-            <li><a class="active-page" href="#">Web Dev</a></li>
         </ul>
     </nav>
 
@@ -73,9 +226,54 @@
         <nav id="sidenav" class="column left">
             <!-- nav/aside/div element? -->
             <ul>
+                <li>
+                    <a href="#linkedin">
+                        <span class="fa fa-linkedin fa-lg fa-fw" aria-hidden="true"></span>
+                        LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="#github">
+                        <span class="fa fa-github fa-lg fa-fw" aria-hidden="true"></span>
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="#resume-pdf">
+                        <span class="fa fa-file-pdf-o fa-lg fa-fw" aria-hidden="true"></span>
+                        Resume (PDF)
+                    </a>
+                </li>
+                <li>
+                    <a href="#free-code-camp">
+                        <span class="fa fa-free-code-camp fa-lg fa-fw" aria-hidden="true"></span>
+                        freeCodeCamp
+                    </a>
+                </li>
+                <li>
+                    <a href="#mdn-web-dev">
+                        <span class="fa fa-file-pdf-o fa-lg fa-fw" aria-hidden="true"></span>
+                        MDN: Web Dev
+                    </a>
+                </li>
+
+                <li><a href="#java-examples">JavaScript Examples</a></li>
+                <!--
                 <li><a href="#java">JavaScript</a></li>
+                <li><a href="#number-guessing">Number Guessing Game</a></li>
+                <li><a href="#silly-story">Silly Story Generator</a></li>
+                <li><a href="#date-time">Date/Time</a></li>
+                <li><a href="#function-library-example">Function Library Example</a></li>
+                <li><a href="#event-handler-onclick">Event Handler: onclick</a></li>
+                <li><a href="#event-handler-onclick-2">Event Handler: onclick II</a></li>
                 <li><a href="#css">CSS</a></li>
                 <li><a href="#html">HTML</a></li>
+                -->
+
+                <li><a href="#misc-examples">Misc Examples</a></li>
+                <li>
+                    <a href="#websites">Web Dev Websites</a>
+                </li>
             </ul>
 
         </nav>
@@ -83,9 +281,356 @@
         <!-- Middle Column -->
         <main class="column middle">
 
-            <section id="java">
+            <!-- Top buttons on middle section -->
+            <section id="main-top-buttons">
+
+                <!-- LinkedIn -->
+                <div id="linkedin" class="button">
+                    <a href="https://www.linkedin.com/in/todd-brentlinger-a307a145" target="_blank">
+                        <span class="fa fa-linkedin fa-lg" aria-hidden="true"></span>
+                        LinkedIn
+                    </a>
+                </div>
+
+                <!-- GitHub -->
+                <div id="github" class="button">
+                    <a href="https://github.com/toddbrentlinger" target="_blank">
+                        <span class="fa fa-github fa-lg" aria-hidden="true"></span>
+                        GitHub Profile
+                    </a>
+                </div>
+
+                <!-- Resume (PDF) -->
+                <div id="resume-pdf" class="button">
+                    <a href="../files/Todd Brentlinger Resume 2017, V2.pdf"
+                       target="_blank">
+                        <span class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></span>
+                        Resume (PDF, 46KB)
+                    </a>
+                </div>
+
+            </section>
+
+            <hr />
+
+            <!-- freeCodeCamp -->
+            <section id="free-code-camp">
+
+                <h2>freeCodeCamp <span class="fa fa-free-code-camp fa-lg" aria-hidden="true"></span></h2>
+
+                <div class="button">
+                    <a href="https://www.freecodecamp.org/toddbrentlinger" target="_blank">freeCodeCamp Profile</a>
+                </div>
+
+            </section>
+
+            <hr />
+
+            <!-- MDN: Learning Web Development -->
+            <section id="mdn-web-dev">
+
+                <h2>MDN: Learn Web Development</h2>
+
+                <!-- MDN: JavaScript Exercises -->
+                <section id="mdn-java">
+
+                    <h3>JavaScript</h3>
+
+                    <div class="button">
+                        <a href="javascipt/image-gallery/index.html">JS Assessment: Image Gallery</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="javascipt/random-canvas-circles.html">Random Canvas Circles</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="javascipt/function-examples.html">Function Example: Display Message Box</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="javascipt/object-oriented-js-example.html">Object Oriented JS Example</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="javascipt/oojs-class-inheritance.html">Object Oriented JS: Class Inheritance</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="javascipt/json-example.html">JSON Example</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="javascipt/bouncing-balls/index.html">Object Oriented JS: Bouncing Balls</a>
+                    </div>
+
+                </section>
+
+                <!-- MDN: CSS Exercises -->
+                <section id="mdn-css">
+
+                    <h3>CSS</h3>
+
+                    <div class="button">
+                        <a href="css/css-fundamental-comprehension.html">CSS Assessment: Fundamental Comprehension</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="css/css-typesetting-a-homepage.html">CSS Assessment: Typesetting a Homepage</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="css/fancy-letterhead/fancy-letterhead.html">CSS Assessment: Creating Fancy Letterhead</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="css/layout-examples.html">CSS Layout Examples</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="css/flexbox-examples.html">CSS Flexbox Examples</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="css/simple-grid-example.html">CSS Simple Grid Example</a>
+                    </div>
+
+                </section>
+
+                <!-- MDN: HTML Exercises -->
+                <section id="mdn-html">
+
+                    <h3>HTML</h3>
+
+                    <div class="button">
+                        <a href="html/html-marking-up-a-letter.html">HTML Assessment: Marking Up a Letter</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="html/mozilla-splash-page/mozilla-splash-page.html">HTML Assessment: Mozilla Splash Page</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="html/html-assessment-structuring-planet-data/html-assessment-structuring-planet-data.html">HTML Assessment: Structuring Planet Data</a>
+                    </div>
+                    
+                    <div class="button">
+                        <a href="html/html-school-timetable.html">HTML: School Timetable</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="html/html-tables-scope-attributes.html">HTML: Tables - Scope Attributes</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="html/html-tables-id-headers-attributes.html">HTML: Tables - ID/Headers Attributes</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="html/html-form-structure.html">HTML Form Structure</a>
+                    </div>
+                
+                </section>
+
+            </section>
+
+            <hr />
+
+            <!-- JavaScript Examples -->
+            <section id="java-examples">
 
                 <h2>JavaScript Examples</h2>
+
+                <!-- Number Guessing Game -->
+
+                <section id="number-guessing">
+
+                    <h2>Number Guessing Game</h2>
+
+                    <p>
+                        We have selected a random number between 1 and 100. See if
+                        you can guess it in 10 turns or fewer We'll tell you if your guess
+                        is too high or too low.
+                    </p>
+
+                    <div class="form">
+                        <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField" />
+                        <input type="submit" value="Submit guess" class="guessSubmit" />
+                    </div>
+
+                    <div class="resultParas">
+                        <p class="guesses"></p>
+                        <p class="lastResult"></p>
+                        <p class="lowOrHi"></p>
+                    </div>
+
+                </section>
+
+                <hr />
+
+                <!-- Silly Story Generator -->
+
+                <section id="silly-story">
+
+                    <h2>Silly Story Generator</h2>
+
+                    <div>
+                        <label for="customname">Enter custom name:</label>
+                        <input id="customname" type="text" placeholder="">
+                    </div>
+
+                    <div>
+                        <label for="us">US</label><input id="us" type="radio" name="ukus" value="us" checked>
+                        <label for="uk">UK</label><input id="uk" type="radio" name="ukus" value="uk">
+                    </div>
+
+                    <div>
+                        <button class="randomize">Generate random story</button>
+                    </div>
+
+                    <p class="story"></p>
+
+                </section>
+
+                <hr />
+
+                <!-- Date / Time -->
+
+                <section id="date-time">
+
+                    <h2>Date/Time</h2>
+
+                    <div id="misc-date"></div>
+
+                    <p class="date"></p>
+                    <p class="time"></p>
+
+                    <label>Enter Birthday: </label>
+                    <select id="birthday-month">
+                        <option value="top">-- Month --</option>
+                        <option value="jan">January</option>
+                        <option value="feb">February</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="jun">June</option>
+                        <option value="jul">July</option>
+                        <option value="aug">August</option>
+                        <option value="sep">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select>
+                    <select id="birthday-day">
+                        <!-- use javascript to add options -->
+                    </select>
+                    <select id="birthday-year">
+                        <!-- use javascript to add options -->
+                        <option value="top">-- Year --</option>
+                    </select>
+
+                    <div id="birthday-facts"></div>
+
+                </section>
+
+                <hr />
+
+                <!-- Function Library Example -->
+                <section id="function-library-example">
+
+                    <h2>Function Library Example</h2>
+
+                    <input class="number-input" type="text" />
+                    <p></p>
+
+                </section>
+
+                <hr />
+
+                <!-- Event Handler: onclick -->
+                <section id="event-handler-onclick">
+
+                    <h2>Event Handler: onclick</h2>
+
+                    <button>Change color</button>
+
+                </section>
+
+                <hr />
+
+                <!-- Event Handler: onclick II -->
+                <section id="event-handler-onclick-2">
+
+                    <h2>Event Handler: onclick II</h2>
+
+                </section>
+
+            </section>
+
+            <hr />
+
+            <!-- Misc HTML/CSS Examples -->
+            <section id="misc-examples">
+
+                <h2>Misc Examples</h2>
+
+                <div class="flex-container">
+                    <!-- Sample Button CSS -->
+                    <div class="button">
+                        <a href="#misc-examples">Sample Button</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="../pages/expand-container.html">Expand Container Test</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="../pages/html-responsive-images.html">HTML: Responsive Images</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="../pages/canvas-api-tutorial.html">Canvas API Tutorial</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="../bond/bond-trivia.html">James Bond Trivia</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="../pages/sample-personal-webpage.html">Sample Personal Webpage</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="freeCodeCamp/tribute-page.html">freeCodeCamp: Tribute Page</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="freeCodeCamp/personal-portfolio-webpage.html">freeCodeCamp: Personal Portfolio Webpage</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="../pages/bootstrap-website-layout.html">Bootstrap Website Layout</a>
+                    </div>
+                </div>
+            
+            </section>
+
+            <hr />
+
+            <!-- Programming / Web Development Websites -->
+            <section id="websites">
+
+                <h2>Programming / Web Development Websites:</h2>
+
+                <ul>
+                    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/" target="_blank">Mozilla Developer Network (MDN)</a></li>
+                    <li><a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a></li>
+                    <li><a href="https://codepen.io/" target="_blank">Codepen</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank">w3Schools</a></li>
+                    <li><a href="https://projecteuler.net/" target="_blank">Project Euler</a></li>
+                </ul>
 
             </section>
 
@@ -161,7 +706,14 @@
 
     </footer>
 
-    <script src=""></script>
+    <!-- End of document scripts. To be sure all document elements are loaded before
+        being accessed through JavaScript -->
+    
+    <script src="../scripts/number-guessing-game.js"></script>
+    <script src="../scripts/silly-story-generator.js"></script>
+    <script src="../scripts/date-time.js"></script>
+    <script src="../scripts/function-library-example.js"></script>
+    <script src="../scripts/event-handler-examples.js"></script>
 
 </body>
 
