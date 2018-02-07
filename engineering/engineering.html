@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Engineering | Todd Brentlinger's Website</title>
+
+    <!-- Stylesheets -->
+    <!--
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+     -->
+    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+
+    <meta name="author" content="Todd Brentlinger" />
+
+    <!-- Note: Attribute name="description" is used for search engines. Include
+        keywords relating to the webpage to optimize Search Engine Optimization (SEO) -->
+    <meta name="description" content="Todd Brentlinger's civil/structural engineering portfolio" />
+
+    <!-- Facebook Metadata -->
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Todd Brentlinger's civil/structural engineering portfolio" />
+    <meta property="og:title" content="Engineering | Todd Brentlinger's Website" />
+
+    <!-- Twitter -->
+    <!-- Custom Favicon (.ico format ensure it works back to IE6) -->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+
+    <!-- jQuery script -->
+    <script src="../scripts/jQuery/jquery-3.2.1.min.js"></script>
+    <!-- Google CDN for jQuery
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    Many users already have downloaded jQuery from Google or Microsoft when visiting another site.
+    As a result, it will be loaded from cache when they visit your site, which leads to faster
+    loading time. Also, most CDN's will make sure that once a user requests a file from it, it
+    will be served from the server closest to them, which also leads to faster loading time.
+    -->
+    <!-- Can put scripts in head section since all jQuery methods in
+        the following scripts are inside a jquery document ready function -->
+    <script src="../scripts/jquery-fixed-nav-after-scroll.js"></script>
+
+    <style>
+
+        /* Resume text */
+
+        #resume-text {
+            font-family: 'Times New Roman', Times, serif;
+            padding: 0.5em 2em;
+            background-color: white;
+            max-width: 900px;
+            margin: 1em auto;
+        }
+
+        #resume-text h2, #resume-text h3 {
+            text-align: center;
+            color: black;
+        }
+
+        #resume-text h3 {
+            margin: 0.5em;
+        }
+
+        /* add thin top border to all but first section */
+        #resume-text section:nth-child(n+2) {
+            border-top: 1px solid black;
+        }
+
+        /* Rows/Columms */
+
+        .resume-row {
+            text-align: center;
+        }
+
+        .resume-col {
+            float: left;
+        }
+
+        .resume-row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .resume-col p, .resume-col ul {
+            display: inline-block;
+            margin: 0.5em auto 1em;
+            text-align: left;
+        }
+
+        /* Resume Sections */
+
+        /* header section */
+        #resume-header {
+            text-align: center;
+            border-bottom: 2px solid black;
+        }
+
+        /* indent first line of paragraph in summary section */
+        #resume-summary p {
+            text-indent: 4em;
+        }
+
+        /* set column width in education and skills section */
+        #resume-education .resume-col, #resume-skills .resume-col {
+            width: 50%;
+        }
+
+        /* set column width in coursework section */
+        #resume-coursework .resume-col {
+            width: 33%;
+        }
+        /*
+        #resume-experience div p {
+            float: left;
+        }
+
+        #resume-experience div ul {
+            clear: both;
+        }
+        */
+        #resume-experience div p:nth-child(1) {
+            float: left;
+        }
+
+        #resume-experience div p:nth-child(2) {
+            float: right;
+        }
+
+        #resume-experience div ul {
+            clear: both;
+        }
+
+        /* Middle Section Top Buttons */
+
+        #main-top-buttons {
+            text-align: center; /* center inline child elements */
+        }
+
+        #main-top-buttons div.button {
+            display: inline-block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Engineering</h1>
+    </header>
+
+    <!-- Top Navigation -->
+    <nav id="topnav">
+        <ul>
+            <li><a href="../index.html"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
+            <li><a href="../webdev/webdev.html">Web Development</a></li>
+            <li><a href="../programming/programming.html">Programming</a></li>
+            <li><a class="active-page" href="#">Engineering</a></li>
+            <li><a href="../personal/personal.html">Personal</a></li>
+            <li><a href="../blog/blog.html">Blog</a></li>
+            <li><a href="../bond/bond-rank.html">James Bond</a></li>
+        </ul>
+    </nav>
+
+    <div class="row">
+
+        <!-- Left Column -->
+        <nav id="sidenav" class="column left">
+            <!-- nav/aside/div element? -->
+            <ul>
+                <li>
+                    <a href="#linkedin">
+                        <span class="fa fa-linkedin fa-lg fa-fw" aria-hidden="true"></span>
+                        LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="#resume-pdf">
+                        <span class="fa fa-file-pdf-o fa-lg fa-fw" aria-hidden="true"></span>
+                        Resume (PDF)
+                    </a>
+                </li>
+                <li>
+                    <a href="#resume-text">
+                        <span class="fa fa-file-text-o fa-lg fa-fw" aria-hidden="true"></span>
+                        Resume
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Middle Column -->
+        <main class="column middle">
+
+            <!-- Top buttons on middle section -->
+            <section id="main-top-buttons">
+
+                <!-- LinkedIn -->
+                <div id="linkedin" class="button">
+                    <a href="https://www.linkedin.com/in/todd-brentlinger-a307a145" target="_blank">
+                        <span class="fa fa-linkedin fa-lg" aria-hidden="true"></span>
+                        LinkedIn
+                    </a>
+                </div>
+
+                <!-- Resume (PDF) -->
+                <div id="resume-pdf" class="button">
+                    <a href="../files/Todd Brentlinger Resume 2017, V2.pdf"
+                       target="_blank">
+                        <span class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></span>
+                        Resume (PDF, 46KB)
+                    </a>
+                </div>
+
+            </section>
+
+            <hr />
+
+            <!-- Resume (text) -->
+            <div id="resume-text">
+
+                <!-- Header -->
+                <section id="resume-header">
+                    <h2>Todd Brentlinger, E.I.T</h2>
+                </section>
+
+                <!-- Summary -->
+                <section id="resume-summary">
+                    <h3>Summary</h3>
+                    <p>
+                        Engineer-in-Training (EIT) and graduate of ABET-accredited bachelor's
+                        in civil engineering program backed by knowledge of engineering theories,
+                        principles, specifications, and standards. Highly motivated to secure an entry-level
+                        job where I may benefit my employer, gain experience, and expand my knowledge of the
+                        field of engineering.
+                    </p>
+                </section>
+
+                <!-- Education -->
+                <section id="resume-education">
+                    <h3>Education</h3>
+                    <div class="resume-row">
+                        <div class="resume-col">
+                            <p>
+                                Graduate Coursework, Structural Engineering<br />
+                                University of California, Davis<br />
+                                September 2013 - June 2014<br />
+                                36 units completed toward M.S.<br />
+                                Cumulative GPA: 3.48<br />
+                            </p>
+                        </div>
+                        <div class="resume-col">
+                            <p>
+                                Bachelor of Science in Civil Engineering<br />
+                                University of California, Berkeley<br />
+                                August 2009 - December 2011<br />
+                                Upper Division Technical GPA: 3.307<br />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="resume-row">
+                        <p>Fundamentals of Engineering Exam Passed, California, October 2011 No. EIT 144769</p>
+                    </div>
+                </section>
+
+                <!-- Academic Coursework -->
+                <section id="resume-coursework">
+                    <h3>Academic Coursework</h3>
+                    <div class="resume-row">
+                        <div class="resume-col">
+                            <ul>
+                                <li>Structural Engineering</li>
+                                <li>Adv. Steel Design</li>
+                                <li>Bridge Design</li>
+                            </ul>
+                        </div>
+                        <div class="resume-col">
+                            <ul>
+                                <li>Adv. Reinforced Concrete Design</li>
+                                <li>Seismic Engineering</li>
+                                <li>Finite Element</li>
+                            </ul>
+                        </div>
+                        <div class="resume-col">
+                            <ul>
+                                <li>Adv. Structural Analysis</li>
+                                <li>Project Management</li>
+                                <li>Structural Dynamics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Graduate Project Experience -->
+                <section id="resume-experience">
+                    <h3>Graduate Project Experience</h3>
+                    <div>
+                        <p>Bridge Design Team Member (UC Davis)</p>
+                        <p>April - June '14</p>
+                        <ul>
+                            <li>
+                                Conducted a preliminary slab-on-girder bridge design given a set of functionality, seismic, and site constraints
+                                under AASHTO design loads. Collaborated with two other team members in design calculations of the
+                                superstructure as well as the end abutments, including pile foundation, culminating in a technical report.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>Seismic Design Team Member (UC Davis)</p>
+                        <p>Jan - March '14</p>
+                        <ul>
+                            <li>
+                                Collaborated with two other team members in designing a building based on ASCE-7 as well as analyzed the
+                                variations and issues with the design of the buildings for earthquake loads using different methods including
+                                pushover analysis and ASCE-41 code.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>Adv. Reinforced Concrete Programmer (UC Davis)</p>
+                        <p>Jan - March '14</p>
+                        <ul>
+                            <li>
+                                Designed a program implemented in MATLAB for the moment-curvature analysis of confined and unconfined
+                                concrete columns through the application of Mandar's model culminating in a technical report including a
+                                validation and use of the program for two concrete column designs.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Additional Skills -->
+                <section id="resume-skills">
+                    <h3>Additional Skills</h3>
+                    <div class="resume-row">
+                        <div class="resume-col">
+                            <ul>
+                                <li>Strong analytic and problem-solving abilities</li>
+                                <li>Good written and oral communication skills</li>
+                                <li>Visual Studio</li>
+                                <li>
+                                    Able to function well as an independent worker or as a member
+                                    of a professional engineering team
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="resume-col">
+                            <ul>
+                                <li>Proficient in C++, C#, MATLAB</li>
+                                <li>Proficient in HTML/CSS/JavaScript</li>
+                                <li>Advanced knowledge of AutoCAD</li>
+                                <li>
+                                    Proficient in Microsoft Office Applications -
+                                    Excel, Word, PowerPoint, etc.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <hr />
+
+        </main>
+
+        <!-- Right Column -->
+        <aside class="column right">
+
+            <div id="social-media-logos">
+                <!-- Twitter Logo -->
+                <a id="twitter-logo" href="https://twitter.com/ToddBrentlinger" target="_blank" title="My Twitter">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- Facebook Logo -->
+                <a id="facebook-logo" href="https://www.facebook.com/todd.brentlinger.7" target="_blank" title="My Facebook">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-facebook fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- Instagram Logo -->
+                <a id="instagram-logo" href="https://www.instagram.com/toddbrentlinger/" target="_blank" title="My Instagram">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-instagram fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- YouTube -->
+                <a id="youtube-logo" href="https://www.youtube.com/channel/UCD5ft_s9gCmYvIonqJGY1Iw" target="_blank" title="My YouTube">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-youtube-square fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a id="linkedin-logo" href="https://www.linkedin.com/in/todd-brentlinger-a307a145" target="_blank" title="My LinkedIn">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-linkedin fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+                <!-- GMail -->
+                <a id="google-logo" href="mailto:toddbrentlinger@gmail.com" title="Email Me">
+                    <span class="fa-stack fa-lg">
+                        <span class="fa fa-circle fa-stack-2x"></span>
+                        <span class="fa fa-envelope-o fa-stack-1x fa-inverse"></span>
+                    </span>
+                </a>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2017 Todd Brentlinger, Santa Cruz, CA, USA.<br />
+            Code licensed under MIT License.
+        </p>
+
+    </footer>
+
+    <script src=""></script>
+
+</body>
+
+</html>

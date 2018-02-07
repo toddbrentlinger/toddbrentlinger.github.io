@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Blog | Todd Brentlinger's Website</title>
+    <title>Programming | Todd Brentlinger's Website</title>
 
     <!-- Stylesheets -->
     <!--
@@ -19,7 +19,16 @@
 
     <!-- Note: Attribute name="description" is used for search engines. Include
         keywords relating to the webpage to optimize Search Engine Optimization (SEO) -->
-    <meta name="description" content="Todd Brentlinger's personal blog" />
+    <meta name="description" content="Todd Brentlinger's programming portfolio" />
+
+    <!-- Facebook Metadata -->
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Todd Brentlinger's programming portfolio" />
+    <meta property="og:title" content="Programming | Todd Brentlinger's Website" />
+
+    <!-- Twitter -->
+    <!-- Custom Favicon (.ico format ensure it works back to IE6) -->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
 
     <!-- jQuery script -->
     <script src="../scripts/jQuery/jquery-3.2.1.min.js"></script>
@@ -30,31 +39,23 @@
     loading time. Also, most CDN's will make sure that once a user requests a file from it, it
     will be served from the server closest to them, which also leads to faster loading time.
     -->
-
     <!-- Can put scripts in head section since all jQuery methods in
         the following scripts are inside a jquery document ready function -->
     <script src="../scripts/jquery-fixed-nav-after-scroll.js"></script>
 
     <style>
 
-        /* Blog Post */
-        .blog-post {
-            width: 80%;
-        }
+        /* Websites list */
 
-        /* Blog Header */
-        .blog-post > h2 {
-            text-align: initial; /* reset text-align of h2 to default value of left */
-        }
-
-        /* Blog Date */
-        .blog-post > time {
-            font-style: italic;
-        }
-
-        /* Blog Entry Paragraphs */
-        .blog-post > p {
-            text-indent: 50px; /* indent start of all paragraphs after date */
+        #websites ul {
+            width: 30%;
+            min-width: 18.75em;
+            margin: 0 auto;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.4);
+            border-left: 5px solid #267257;
+            background-color: #F2F2F2;
         }
 
     </style>
@@ -65,7 +66,7 @@
 
     <!-- Header -->
     <header>
-        <h1>Todd Brentlinger's Blog</h1>
+        <h1>Programming</h1>
     </header>
 
     <!-- Top Navigation -->
@@ -73,10 +74,10 @@
         <ul>
             <li><a href="../index.html"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
             <li><a href="../webdev/webdev.html">Web Development</a></li>
-            <li><a href="../programming/programming.html">Programming</a></li>
+            <li><a class="active-page" href="#">Programming</a></li>
             <li><a href="../engineering/engineering.html">Engineering</a></li>
             <li><a href="../personal/personal.html">Personal</a></li>
-            <li><a class="active-page" href="#">Blog</a></li>
+            <li><a href="../blog/blog.html">Blog</a></li>
             <li><a href="../bond/bond-rank.html">James Bond</a></li>
         </ul>
     </nav>
@@ -87,7 +88,15 @@
         <nav id="sidenav" class="column left">
             <!-- nav/aside/div element? -->
             <ul>
-                <li><a href="#">Blog Post</a></li>
+                <li>
+                    <a href="#github">
+                        <span class="fa fa-github fa-lg fa-fw" aria-hidden="true"></span>
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="#websites">Programming Websites</a>
+                </li>
             </ul>
 
         </nav>
@@ -95,85 +104,33 @@
         <!-- Middle Column -->
         <main class="column middle">
 
-            <!-- Base Blog Post -->
-            <section class="blog-post inv">
-                <h2>[Blog Post Title]</h2>
-                <time datetime="">DayOfWeek Month Day<sup>th/st</sup>, Year</time>
-                <p>[Blog Post Entry]</p>
-            </section>
+            <section id="github">
 
-            <!-- January 12, 2018 -->
-            <section class="blog-post">
-
-                <h2>New Year's Resolutions</h2>
-
-                <time datetime="2018-01-12">Friday January 12<sup>th</sup>, 2018</time>
-
-                <p>Happy New Years!</p>
-
-                <p>Here's hoping this next year will be nothing like the last.</p>
-
-                <p>
-                    Get a job, get a girlfriend, lose weight, get in shape, blah, blah, blah... I get a sense of déjà vu around this time every year for some
-                    strange reason.
-                </p>
-
-                <p>
-                    For my weight loss, I use a combination of intermittent fasting and 
-                    calorie counting. For the intermittent fasting, I only eat during an
-                    eight-hour period between 2pm and 10pm. Outside those hours, I consume
-                    only water. When I do eat, I use a calorie counting app on my iPhone,
-                    called LoseIt!, to make sure my daily caloric intake is at a deficit.
-                    The recommended daily calories to maintain my current weight at 200-lbs,
-                    is approximately 2500 calories. If I try to lose 2-lbs per week and, considering 
-                    3500 calories is equivalent to one pound of fat, my daily calorie intake
-                    needs to be 1500 calories. However, the minimum daily calories for a man
-                    is 1800 calories so I don't feel bad about getting between 1500-1800 calories
-                    per day within an eight-hour period.
-                </p>
+                <div class="button">
+                    <a href="https://github.com/toddbrentlinger" target="_blank">
+                        <span class="fa fa-github fa-lg" aria-hidden="true"></span>
+                        GitHub Profile
+                    </a>
+                </div>
 
             </section>
 
             <hr />
 
-            <!-- December 10, 2017 -->
-            <section class="blog-post">
+            <!-- Programming / Web Development Websites -->
+            <section id="websites">
 
-                <h2>My 30<sup>th</sup> Birthday</h2>
+                <h2>Programming / Web Development Websites:</h2>
 
-                <time datetime="2017-12-10">Sunday December 10<sup>th</sup>, 2017</time>
-
-                <p>[Blog Post Entry]</p>
-                
-                <p>I feel like I've wasted my twenties.</p>
-
-            </section>
-
-            <hr />
-
-            <!-- October 21, 2017 -->
-            <section class="blog-post">
-
-                <h2>My First Blog Post</h2>
-
-                <time datetime="2017-10-21">Saturday October 21<sup>st</sup>, 2017</time>
-
-                <p>
-                    [First entry blog post] Today is the day I created this website.
-                </p>
-
-                <p> 
-                    Why did I create a personal website? Something to do in my free time, keep my mind stimulated, 
-                    act like a portfolio to show potential employers, etc.
-                </p>
-
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+                <ul>
+                    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/" target="_blank">Mozilla Developer Network (MDN)</a></li>
+                    <li><a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a></li>
+                    <li><a href="https://codepen.io/" target="_blank">Codepen</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank">w3Schools</a></li>
+                    <li><a href="https://projecteuler.net/" target="_blank">Project Euler</a></li>
+                </ul>
 
             </section>
 
