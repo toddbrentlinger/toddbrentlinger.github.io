@@ -42,8 +42,51 @@
         }
 
         /* Detailed List, dl */
-        dl > dd {
-            padding-bottom: 1em;
+        dl > dd { padding-bottom: 1em; }
+
+        /* Indent paragraph children of well class elements */
+        #weapons > .well > p,
+        #vehicles > .well > p,
+        #gadgets > .well > p,
+        #women > .well > p { 
+            text-indent: 50px;
+        }
+
+        /* Bond Trivia */
+        #bond-trivia {
+            width: 75%;
+            max-width: 750px;
+            margin: 0 auto;
+            border: 2px solid black;
+            padding: 1em;
+            text-align: center;
+        }
+
+        #bond-trivia-choices > p {
+            display: inline-block;
+            padding: 1em 2em;
+            border: 1px solid black;
+            margin: 0 0 1.25em 0; /* margin of h2 is 0.83em with font-size 1.5em; product is 1.25em */
+            cursor: pointer;
+        }
+
+        #bond-trivia-choices > p:hover, 
+        #bond-trivia-choices > p:focus {
+            background-color: #ccc;
+        }
+
+        #bond-trivia-choices > p.selected-answer {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Add padding around floated images */
+        img.pull-right {
+            padding-left: 1em;
+        }
+
+        img.pull-left {
+            padding-right: 1em;
         }
     
     </style>
@@ -73,56 +116,79 @@
         </section>
 
         <blockquote>
-            <p><span class="fa fa-quote-left fa-lg"></span> Bond is not a hero, nor is he depicted as being very likable or admirable. He is a Secret Service Agent. He’s not a bad man, but he is ruthless and self-indulgent. He enjoys the fight- he also enjoys the prizes. In fiction people used to have blood in their veins. Nowadays they have pond water. My books are just out of step. But then so are all the people who read them.”</p>
+            <p><span class="fa fa-quote-left fa-2x fa-pull-left"></span> Bond is not a hero, nor is he depicted as being very likable or admirable. He is a Secret Service Agent. He’s not a bad man, but he is ruthless and self-indulgent. He enjoys the fight- he also enjoys the prizes. In fiction people used to have blood in their veins. Nowadays they have pond water. My books are just out of step. But then so are all the people who read them.”</p>
             <p>“I didn’t intend for Bond to be likable. He’s a blunt instrument in the hands of the government. He’s got vices and few perceptible virtues.”</p>
             <footer>Ian Fleming</footer>
         </blockquote>
-
+        
         <div class="row justify-content-center">
-            <div class="col-sm-6">
-                <div class="well well-sm">
-                    <h3 class="text-center">Guns</h3>
-                    <p>Lorem ipsum</p>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="well well-sm">
-                    <h3 class="text-center">Vehicles</h3>
-                    <p>Lorem ipsum</p>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-6">
-                <div class="well well-sm">
+            <div id="weapons" class="col-sm-6">
+                <div class="well well-sm clearfix">
                     <h3 class="text-center">Gadgets</h3>
-                    <p>Lorem ipsum</p>
+                    <img class="img-responsive pull-right" src="https://vignette.wikia.nocookie.net/jamesbond/images/3/3f/Black_leather_ttache_case_frwl.jpg/revision/latest?cb=20171102005322" alt="Attaché case in From Russia With Love" />
+                    <p>The James Bond books and films have featured exotic equipment and vehicles, which often prove to be critically useful. The original books and early adaptations had only relatively minimal pieces like the modified attache case in From Russia, with Love. However, the gadgets took on a more spectacular profile in the film version of Goldfinger, and its tremendous success encouraged the following films to have Bond supplied with still more equipment. For instance, it became an expected scene in each film where Q would present and demonstrate Bond's assigned tools for the mission, and it was a near guarantee that each and every piece would be invaluable to Bond in the field. In this sense, Bond gadgets became a prime example of the literary technique of Chekhov's gun.</p>
+                    <p>Fans eventually complained that the use of gadgets became excessive in the Roger Moore films, particularly in Moonraker, and subsequent productions struggled to find a balance in which gadgets could have a place without giving the impression that the character unduly depended on them or using stories that arbitrarily included situations that exactly fit the use of the gadgets assigned.</p>
+                    <p>Fleming's novels and early screen adaptations presented minimal equipment such as the booby-trapped attaché case in From Russia with Love, although this situation changed dramatically with the films. However, the effects of the two Eon-produced Bond films Dr. No and From Russia with Love had an effect on the novel The Man with the Golden Gun, through the increased number of devices used in Fleming's final story.</p>
+                    <img class="img-responsive pull-left" src="https://vignette.wikia.nocookie.net/jamesbond/images/5/5d/Laser_watch%2C_active_%28GoldenEye%2C_1995%29_1.png/revision/latest?cb=20161128212047" alt="Laser Watch in GoldenEye" />
+                    <p>For the film adaptations of Bond, the pre-mission briefing by Q Branch became one of the motifs that ran through the series. Dr. No provided no spy-related gadgets, but a Geiger counter was used; industrial designer Andy Davey observed that the first ever onscreen spy-gadget was the attaché case shown in From Russia with Love, which he described as "a classic 007 product". The gadgets assumed a higher profile in the 1964 film Goldfinger. The film's success encouraged further espionage equipment from Q Branch to be supplied to Bond, although the increased use of technology led to an accusation that Bond was over-reliant on equipment, particularly in the later films.</p>
+                    <p>Davey noted that "Bond's gizmos follow the zeitgeist more closely than any other … nuance in the films" as they moved from the potential representations of the future in the early films, through to the brand-name obsessions of the later films. It is also noticeable that, although Bond uses a number of pieces of equipment from Q Branch, including the Little Nellie autogyro, a jet pack and the exploding attaché case, the villains are also well-equipped with custom-made devices, including Scaramanga's golden gun, Rosa Klebb's poison-tipped shoes, Oddjob's steel-rimmed bowler hat and Blofeld's communication devices in his agents' vanity case.</p>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="well well-sm">
-                    <h3 class="text-center">Header</h3>
-                    <p>Lorem ipsum</p>
+            <div id="vehicles" class="col-sm-6">
+                <div class="well well-sm clearfix">
+                    <h3 class="text-center">Vehicles</h3>
+                    <img class="img-responsive pull-right" src="https://vignette.wikia.nocookie.net/jamesbond/images/3/37/DB5_Switzerland_Scene_-_Goldfinger.png/revision/latest?cb=20130112152713" alt="Aston Martin DB5 in Goldfinger" />
+                    <p>Throughout the James Bond series of films and novels, Q Branch has given Bond a variety of vehicles with which to battle his enemies. Among the most noteworthy gadgets, Bond has been equipped with various vehicles that have numerous modifications to include elaborate weapons and anti-pursuit systems, alternative transportation modes, and various other functions. One car in particular that has been linked to Mr. Bond's collection is the Aston Martin DB5.</p>
+                    <p>In the early Bond stories Fleming gave Bond a battleship-grey Bentley 4½ Litre with an Amherst Villiers supercharger. After Bond's car was written off by Hugo Drax in Moonraker, Fleming gave Bond a Mark II Continental Bentley, which he used in the remaining books of the series. During Goldfinger, Bond was issued with an Aston Martin DB Mark III with a homing device, which he used to track Goldfinger across France. Bond returned to his Bentley for the subsequent novels.</p>
+                    <img class="img-responsive pull-left" src="https://upload.wikimedia.org/wikipedia/en/c/ce/Lotus_Esprit_submarine.jpg" alt="Lotus Esprit in The Spy Who Loved Me" />
+                    <p>The Bond of the films has driven a number of cars, including the Aston Martin V8 Vantage, during the 1980s, the V12 Vanquish and DBS during the 2000s, as well as the Lotus Esprit; the BMW Z3, BMW 750iL and the BMW Z8. He has, however, also needed to drive a number of other vehicles, ranging from a Citroën 2CV to a Routemaster Bus, amongst others.</p>
+                    <p>Bond's most famous car is the silver grey Aston Martin DB5, first seen in Goldfinger; it later featured in Thunderball, GoldenEye, Tomorrow Never Dies, Casino Royale, Skyfall and Spectre. The films have used a number of different Aston Martins for filming and publicity, one of which was sold in January 2006 at an auction in the US for $2,090,000 to an unnamed European collector.</p>
                 </div>
             </div>
         </div>
+        <div class="row justify-content-center">
+            <div id="gadgets" class="col-sm-6">
+                <div class="well well-sm clearfix">
+                    <h3 class="text-center">Weapons</h3>
+                    <img class="img-responsive pull-right" src="https://vignette.wikia.nocookie.net/jamesbond/images/a/ad/The_Man_with_the_Golden_Gun_-_Duel_Scene.png/revision/latest?cb=20121118203724" alt="Golden Gun and Walther PPK in The Man With The Golden Gun" />
+                    <p>For the first five novels, Fleming armed Bond with a Beretta 418 until he received a letter from a thirty-one-year-old Bond enthusiast and gun expert, Geoffrey Boothroyd, criticising Fleming's choice of firearm for Bond, calling it "a lady's gun – and not a very nice lady at that!" Boothroyd suggested that Bond should swap his Beretta for a Walther PPK 7.65mm and this exchange of arms made it to Dr. No.</p>
+                    <p>Fleming had Bond's Beretta caught in his holster at the end of From Russia with Love, an event that almost costs the secret agent his life. In the next novel, Dr. No, a certain Major Boothroyd recommends that Bond switch guns. Bond is issued a Walther PPK but is told to carry it in a Berns-Martin triple draw holster, which is designed only to carry revolvers. This is an odd mistake given that Fleming had bought such a holster and had it sent to Jamaica. (It has been argued that Q-branch could have modified an excellent holster to accommodate automatics.</p>
+                    <p>Boothroyd also gave Fleming advice on the Berns-Martin triple draw shoulder holster and a number of the weapons used by SMERSH and other villains. In thanks, Fleming gave the MI6 Armourer in his novels the name Major Boothroyd and, in Dr. No, M introduces him to Bond as "the greatest small-arms expert in the world". Bond also used a variety of rifles, including the Savage Model 99 in "For Your Eyes Only" and a Winchester .308 target rifle in "The Living Daylights". Other handguns used by Bond in the Fleming books included the Colt Detective Special and a long-barrelled Colt .45 Army Special.</p>
+                    <p>The first Bond film, Dr. No, saw M ordering Bond to leave his Beretta behind and take up the Walther PPK, which the film Bond used in eighteen films. In Tomorrow Never Dies and the two subsequent films, Bond's main weapon was the Walther P99 semi-automatic pistol.</p>
+                </div>
+            </div>
+            <div id="women" class="col-sm-6">
+                <div class="well well-sm clearfix">
+                    <h3 class="text-center">Women</h3>
+                    <img class="img-responsive pull-right" src="https://vignette.wikia.nocookie.net/jamesbond/images/5/55/Honey_Ryder_%28Ursula_Andress%29_-_Profile.jpg/revision/latest?cb=20130601205359" alt="Ursula Andress as Honey Ryder in Dr. No" />
+                    <p>A Bond girl is a character (or the actress portraying a character) who is a love interest and/or female sidekick of James Bond in a novel, film, or video game. Bond girls occasionally have names that are double entendres or puns, such as Pussy Galore, Plenty O'Toole, Xenia Onatopp, or Holly Goodhead, and are considered "ubiquitous symbol[s] of glamour and sophistication."</p>
+                    <p>There is no set rule on what kind of person a Bond girl will be or what role she will play. She may be an ally or an enemy of Bond, pivotal to the mission or simply eye candy. There are female characters such as Judi Dench's M, and Camille Montes, a Bolivian intelligence agent who teams up with Bond in Quantum of Solace, who are not romantic interests of Bond, and hence not strictly Bond girls. However, it has been argued that M's pivotal role in the plot of Skyfall qualifies her as a Bond girl or Bond woman.</p>
+                    <p>Roald Dahl said that when writing You Only Live Twice, he was advised to use three Bond girls: The first should die "preferably in Bond's arms" early, the second a villain whom Bond seduces before she dies in an unusual and gory way midway, and the third survives to the end of the film. In several, the Bond girl is revealed, after her tryst with Bond, to be a villainess. Examples are Fatima Blush (Barbara Carrera) in Never Say Never Again (1983), Elektra King (Sophie Marceau) in The World Is Not Enough (1999), and Miranda Frost (Rosamund Pike) in Die Another Day (2002). The Dalton films of the 1980s introduced the "Bond woman", who is equal to and challenges Bond, but he remains the heterosexual hero; they are depicted with Dalton and later Bonds and their cars and gadgets, implying that all are possessions that Bond can use and dispose.</p>
+                    <img class="img-responsive pull-left" src="https://vignette.wikia.nocookie.net/jamesbond/images/e/e1/Elektra_Profile.png/revision/latest?cb=20120820194306" alt="Sophie Marceau as Elektra King in The World Is Not Enough" />
+                    <p>As of 2013 there have been only two films in which James Bond falls in love with the Bond girl. The first was On Her Majesty's Secret Service (1969), in which Countess Tracy di Vicenzo (Diana Rigg) marries Bond but is shot dead by Irma Bunt and Ernst Stavro Blofeld at the story's end. The second was Vesper Lynd (Eva Green) in Casino Royale (2006). Bond confesses his love to her and resigns from MI6 so that they can have a normal life together. He later learns that she had been a double agent working for his enemies. The enemy organisation Quantum had kidnapped her former lover and had been blackmailing her to secure her co-operation. She ends up actually falling in love with Bond, but dies, as Quantum is closing in on her, by drowning in a lift in a building under renovation in Venice.</p>
+                    <p>With the exception of these two doomed Bond girls, it is never explained why Bond's love interest in one film is gone by the next, and is never mentioned or even alluded to again. This is not always the case in the novels, which do sometimes make references to the Bond girls who have appeared in previous books. Tiffany Case and Honey Ryder are revealed to have married other men (in From Russia With Love and The Man With the Golden Gun respectively), and in Doctor No, Bond briefly wonders about Solitaire. In Licence Renewed it is specifically noted in an epilogue that Bond and Lavender Peacock stopped seeing each other after a brief romance. A unique case is Mary Goodnight, who appears in the novels, On Her Majesty's Secret Service and You Only Live Twice as Bond's secretary, before becoming a full-fledged Bond girl in The Man With the Golden Gun.</p>
+                </div>
+            </div>
+        </div>
+        
+        <section>
+            <h2 class="text-center">James Bond Actors</h2>
 
-        <h2 class="text-center">James Bond Actors</h2>
-
-        <dl class="dl-horizontal">
-            <dt>Sean Connery</dt>
-            <dd>Sean Connery was the first actor to perform the role on the big screen. He appeared in Dr. No (1962), From Russia with Love (1963), Goldfinger (1964), Thunderball (1965), You Only Live Twice (1967) and Diamonds Are Forever (1971). In 1983 he returned to the role for the last time in the unofficial James Bond film, Never Say Never Again. In addition he also provided his voice and likeness for 2005's video game adaptation of From Russia with Love.</dd>
-            <dt>George Lazenby</dt>
-            <dd>Australian actor and model George Lazenby briefly held the role from 1968 to 1969, appearing in 1969's On Her Majesty's Secret Service. Even though he had been offered a contract for seven movies, Lazenby felt dissatisfied with the role and left the series after the release of the film.</dd>
-            <dt>Roger Moore</dt>
-            <dd>Following the final departure of Sean Connery in 1971, English actor Roger Moore took over the role from 1973 to 1985. To date he is the longest-serving James Bond actor, spanning twelve years in the role. He is also the oldest actor to play Bond; having begun the role at 45 and retiring from it at the age of 58. He appeared in Live and Let Die (1973), The Man with the Golden Gun (1974), The Spy Who Loved Me (1977), Moonraker (1979), For Your Eyes Only (1981), Octopussy (1983) and A View to a Kill (1985). </dd>
-            <dt>Timothy Dalton</dt>
-            <dd>Welsh actor Timothy Dalton took over the role from Roger Moore in 1987. He appeared in The Living Daylights (1987) and Licence to Kill (1989). Legal issues between the Bond producers and the studio over distribution rights resulted in the cancellation of a proposed third Dalton film scheduled for release in 1991 and put the series on a hiatus for several years.</dd>
-            <dt>Pierce Brosnan</dt>
-            <dd>Irish actor Pierce Brosnan held the role from 1995 to 2004. He appeared in GoldenEye (1995), Tomorrow Never Dies (1997), The World Is Not Enough (1999) and Die Another Day (2002). In addition he also provided his likeness for six James Bond video games, starting with Rareware's 1997 blockbuster GoldenEye 007. Although he didn't voice the character until Everything or Nothing, his last appearance as 007, several actors have lent their voices to Brosnan's Bond, including Adam Blackwood in Tomorrow Never Dies (1999), Timothy Bentinck in The World Is Not Enough (2000) and later Maxwell Caulfield in Nightfire (2002).</dd>
-            <dt>Daniel Craig</dt>
-            <dd>Daniel Craig is the sixth official actor to appear as James Bond and appears in Casino Royale (2006), Quantum of Solace (2008), Skyfall (2012), Spectre (2015) and Bond 25 (2019). In addition he also provided his voice and likeness for several James Bond video games including Quantum of Solace (2008), the 2010 remake of GoldenEye 007, Blood Stone (2010), and 007 Legends (2012), in which Craig's Bond was voiced by British actor Timothy Watson.</dd>
-        </dl>
+            <dl class="dl-horizontal">
+                <dt>Sean Connery</dt>
+                <dd>Sean Connery was the first actor to perform the role on the big screen. He appeared in Dr. No (1962), From Russia with Love (1963), Goldfinger (1964), Thunderball (1965), You Only Live Twice (1967) and Diamonds Are Forever (1971). In 1983 he returned to the role for the last time in the unofficial James Bond film, Never Say Never Again. In addition he also provided his voice and likeness for 2005's video game adaptation of From Russia with Love.</dd>
+                <dt>George Lazenby</dt>
+                <dd>Australian actor and model George Lazenby briefly held the role from 1968 to 1969, appearing in 1969's On Her Majesty's Secret Service. Even though he had been offered a contract for seven movies, Lazenby felt dissatisfied with the role and left the series after the release of the film.</dd>
+                <dt>Roger Moore</dt>
+                <dd>Following the final departure of Sean Connery in 1971, English actor Roger Moore took over the role from 1973 to 1985. To date he is the longest-serving James Bond actor, spanning twelve years in the role. He is also the oldest actor to play Bond; having begun the role at 45 and retiring from it at the age of 58. He appeared in Live and Let Die (1973), The Man with the Golden Gun (1974), The Spy Who Loved Me (1977), Moonraker (1979), For Your Eyes Only (1981), Octopussy (1983) and A View to a Kill (1985). </dd>
+                <dt>Timothy Dalton</dt>
+                <dd>Welsh actor Timothy Dalton took over the role from Roger Moore in 1987. He appeared in The Living Daylights (1987) and Licence to Kill (1989). Legal issues between the Bond producers and the studio over distribution rights resulted in the cancellation of a proposed third Dalton film scheduled for release in 1991 and put the series on a hiatus for several years.</dd>
+                <dt>Pierce Brosnan</dt>
+                <dd>Irish actor Pierce Brosnan held the role from 1995 to 2004. He appeared in GoldenEye (1995), Tomorrow Never Dies (1997), The World Is Not Enough (1999) and Die Another Day (2002). In addition he also provided his likeness for six James Bond video games, starting with Rareware's 1997 blockbuster GoldenEye 007. Although he didn't voice the character until Everything or Nothing, his last appearance as 007, several actors have lent their voices to Brosnan's Bond, including Adam Blackwood in Tomorrow Never Dies (1999), Timothy Bentinck in The World Is Not Enough (2000) and later Maxwell Caulfield in Nightfire (2002).</dd>
+                <dt>Daniel Craig</dt>
+                <dd>Daniel Craig is the sixth official actor to appear as James Bond and appears in Casino Royale (2006), Quantum of Solace (2008), Skyfall (2012), Spectre (2015) and Bond 25 (2019). In addition he also provided his voice and likeness for several James Bond video games including Quantum of Solace (2008), the 2010 remake of GoldenEye 007, Blood Stone (2010), and 007 Legends (2012), in which Craig's Bond was voiced by British actor Timothy Watson.</dd>
+            </dl>
+        </section>
 
         <div id="bond-table" class="table-responsive">
             <table class="table table-striped table-bordered vertical-middle">
@@ -172,7 +238,7 @@
                         <td>Diamonds Are Forever</td>
                         <td>1971</td>
                         <td>Sean Connery</td>
-                        <td rowspan="3">Guy Hamilton/td>
+                        <td rowspan="3">Guy Hamilton</td>
                     </tr>
                     <tr>
                         <td>Live and Let Die</td>
@@ -258,13 +324,51 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Trivia Game -->
+        <section id="bond-trivia">
+            <h1>James Bond Trivia:</h1>
+
+            <h2>Question: </h2>
+            <p id="bond-trivia-question"></p>
+            <h2>Choices: </h2>
+            <div id="bond-trivia-choices"></div>
+
+            <button id="bond-trivia-submit">Submit</button>
+
+            <p id="bond-trivia-response"></p>
+
+            <h2 id="bond-trivia-score">Score: </h2>
+        </section>
+
+        <!-- References -->
+        <section class="well well-sm text-center">
+            <h2>References:</h2>
+            <div>
+                <a href="https://en.wikipedia.org/wiki/James_Bond" target="_blank">Wikipedia: James Bond</a>
+            </div>
+            <div>
+                <a href="https://jamesbond.wikia.com/wiki/Main_Page" target="_blank">James Bond Wiki</a>
+            </div>
+            
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center">
+            <p>
+                &copy; 2017 Todd Brentlinger, Santa Cruz, CA, USA.<br />
+                Code licensed under MIT License.
+            </p>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="../../bond/bond-trivia.js"></script>
+
         <!-- Optional Bootstrap JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <!--
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        -->
     </div>
 </body>
 </html>

@@ -1,0 +1,277 @@
+﻿/* ---------------------------------------------------- */
+/* General Page Styles */
+/* ---------------------------------------------------- */
+
+body {
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px; /* 100%, 10px - replace Bootstrap body{font-size: 14px} */
+    /* avoid problems with adjusted text size in older browser versions 
+    when using em/rem units for font-size in other html elements 
+    (1em/rem = 16px depending on parent element(em) or root element(rem)
+    size font
+    */
+    line-height: 1.2;
+    background-color: #DBE9EE;
+}
+
+h1 {
+    margin: 0.67em 0;
+}
+
+h2 {
+    margin: 0.83em 0;
+}
+
+h3 {
+    margin: 1em 0;
+}
+
+/* Change default Bootstrap heading font-weight */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+
+ol {
+    margin: 1em 0;
+    padding-left: 40px;
+}
+
+p {
+    margin: 1em 0;
+}
+
+ul {
+    margin: 1em 0;
+    padding-left: 40px;
+}
+
+/* ---------------------------------------------------- */
+/* Header */
+/* ---------------------------------------------------- */
+header {
+    background-color: #466995; /* fallback color in case linear-gradient not supported */
+    background-image: linear-gradient(to bottom, #466995, #DBE9EE);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    text-shadow: 0.1em 0.1em 10px black;
+}
+
+/* ---------------------------------------------------- */
+/* Footer */
+/* ---------------------------------------------------- */
+footer {
+    background-color: #466995; /* fallback color in case linear-gradient not supported */
+    background-image: linear-gradient(to top, #466995, #DBE9EE);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0.1em -0.1em 10px black;
+}
+
+/* ---------------------------------------------------- */
+/* Top Navigation */
+/* ---------------------------------------------------- */
+
+#topnav {
+    background-color: #DBE9EE;
+    border-bottom: 2px solid #466995;
+}
+
+#myNavBar {
+    text-align: center; /* center inline elements */
+}
+
+/* Style the top navigation bar, unordered list */
+#myNavBar ul {
+    padding: 0; /* remove default padding for ul elements */
+    margin: 0; /* remove default margin for ul elements */
+    font-size: 0; /* to prevent space between inline-block elements in li element;
+        Can also remove the closing </li> tags instead. Which is better?
+    */
+}
+
+/* Style the top navigation list element */
+#myNavBar ul li {
+    /*float: left;*/ /* keep links to the right */
+    display: inline; /* center links in combination with text-align: center; */
+}
+
+/* Style the top navigation links */
+#topnav a {
+    /*display: inline-block;*/
+    font-size: 1.6rem; /* 16px: reset font-size after setting to zero in #topnav ul {} to 
+        prevent space between inline-block elements
+    padding: 0.875em 1em; /* 14px 16px (1em=16px) */
+    text-decoration: none;
+}
+
+/* Set color on default link and active pseudo-classes */
+#topnav a:link, 
+#topnav a:visited {
+    color: #466995;
+    background-color: #DBE9EE;
+}
+
+/* Change the color on hover */
+#topnav a:hover, 
+#topnav a:active {
+    color: white;
+    background-color: #466995;
+}
+
+/* Change the color of active page */
+#topnav .active a {
+    color: white;
+    background-color: #4CAF50;
+}
+
+#topnav .dropdown-menu {
+    background-color: inherit;
+}
+
+/* Change default Bootstrap dropdown menu background-color  */
+#topnav .dropdown-menu > li > a:focus, 
+#topnav .dropdown-menu > li > a:hover {
+    color: white;
+    background-color: #466995;
+}
+
+/* Change default Bootstrap dropdown */
+#topnav .navbar-nav > .open > a, 
+#topnav .navbar-nav > .open > a:focus, 
+#topnav .navbar-nav > .open > a:hover {
+    color: white;
+    background-color: #466995;
+}
+
+/* Remove padding from Bootstrap .container-fluid on topnav */
+#topnav .container-fluid {
+    padding: 0;
+}
+
+/*  */
+.navbar-brand {
+
+}
+
+/* ---------------------------------------------------- */
+/* Affix Plugin for Top Navigation */
+/* ---------------------------------------------------- */
+
+.affix {
+    top: 0;
+    width: 100%;
+}
+
+.affix-top {
+
+}
+
+.affix.bottom {
+
+}
+
+/* ---------------------------------------------------- */
+/* Column */
+/* ---------------------------------------------------- */
+
+main {
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+/* Middle column, Main */
+#main-column {
+    border-left: 2px solid #466995;
+    border-right: 2px solid #466995;
+}
+
+/* Thematic break hr */
+#main-column > hr, #main-column section > hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, 
+    rgba(0,0,0,0), rgb(70,105,149) 30%, 
+    rgb(70,105,149) 70%, rgba(0,0,0,0));
+}
+
+/* Align headers to center in middle column */
+#main-column h2, #main-column h3 {
+    text-align: center;
+    color: #466995;
+}
+
+/* ---------------------------------------------------- */
+/* Social Media Logos */
+/* ---------------------------------------------------- */
+
+#social-media-logos a {
+    display: inline-block;
+}
+
+#twitter-logo .fa-circle {
+    color: #00B6F1 /* twitter blue */
+}
+
+#facebook-logo .fa-circle {
+    color: #3B5998; /* facebook blue */
+}
+
+#instagram-logo .fa-circle {
+    color: #C32AA3; /* instagram magenta */
+}
+
+#youtube-logo .fa-circle {
+    color: #FF0000; /* youtube red */
+}
+
+#linkedin-logo .fa-circle {
+    color: #007BB5; /* linkedin blue */
+}
+
+#google-logo .fa-circle {
+    color: #DF4A32; /* google+ red */
+}
+
+/* ---------------------------------------------------- */
+/* Responsive Layout */
+/* ---------------------------------------------------- */
+
+/* On small screens, hide left side-nav */
+@media screen and (max-width:767px) {
+    #left-column {
+        display: none; /* could instead add Bootstrap .hidden-xs or .hidden.sm to #left-column */
+    }
+}
+
+/*******************************************/
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+}

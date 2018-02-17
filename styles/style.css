@@ -1,7 +1,9 @@
-﻿* {
+﻿*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* ---------------------------------------------------- */
@@ -11,7 +13,8 @@
 html {
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px; /* 100%, 10px */
-    /* avoid problems with adjusted text size in older browser versions 
+    /* 
+    avoid problems with adjusted text size in older browser versions 
     when using em/rem units for font-size in other html elements 
     (1em/rem = 16px depending on parent element(em) or root element(rem)
     size font
@@ -20,6 +23,7 @@ html {
 }
 
 body {
+    color: #222;
     background-color: #DBE9EE;
     /*
     max-width: 1200px;
@@ -30,45 +34,33 @@ body {
     */
 }
 
-h1 {
-    margin: 0.67em 0;
-}
-
-h2 {
-    margin: 0.83em 0;
-}
-
-h3 {
-    margin: 1em 0;
-}
+h1 { margin: 0.67em 0; }
+h2 { margin: 0.83em 0; }
+h3 { margin: 1em 0; }
 
 ol {
     margin: 1em 0;
     padding-left: 40px;
 }
 
-p {
-    margin: 1em 0;
-}
+p { margin: 1em 0; }
 
 ul {
     margin: 1em 0;
     padding-left: 40px;
 }
 
-section > p {
-    line-height: 1.2;
-}
+section > p { line-height: 1.2; }
 
 /* ---------------------------------------------------- */
 /* Header */
 /* ---------------------------------------------------- */
 header {
-    background-color: #466995; /* fallback color in case linear-gradient not supported */
-    background-image: linear-gradient(to bottom, #466995, #DBE9EE);
+    padding: 30px;
     color: white;
     text-align: center;
-    padding: 30px;
+    background-color: #466995; /* fallback color in case linear-gradient not supported */
+    background-image: linear-gradient(to bottom, #466995, #DBE9EE);
     text-shadow: 0.1em 0.1em 10px black;
 }
 
@@ -76,11 +68,11 @@ header {
 /* Footer */
 /* ---------------------------------------------------- */
 footer {
-    background-color: #466995; /* fallback color in case linear-gradient not supported */
-    background-image: linear-gradient(to top, #466995, #DBE9EE);
+    padding: 20px;
     color: white;
     text-align: center;
-    padding: 20px;
+    background-color: #466995; /* fallback color in case linear-gradient not supported */
+    background-image: linear-gradient(to top, #466995, #DBE9EE);
     text-shadow: 0.1em -0.1em 10px black;
 }
 
@@ -89,9 +81,9 @@ footer {
 /* ---------------------------------------------------- */
 
 #topnav {
+    text-align: center; /* center inline elements */
     background-color: #DBE9EE;
     border-bottom: 2px solid #466995;
-    text-align: center; /* center inline elements */
 }
 
 /* Style the top navigation bar, unordered list */
@@ -121,12 +113,12 @@ footer {
 }
 
 /* Set color on default link and active pseudo-classes */
-#topnav a:link, #topnav a:visited {
-    color: #466995;
-}
+#topnav a:link, 
+#topnav a:visited { color: #466995; }
 
 /* Change the color on hover */
-#topnav a:hover, #topnav a:active {
+#topnav a:hover, 
+#topnav a:active {
     background-color: #466995;
     color: white;
 }
@@ -159,9 +151,7 @@ footer {
 }
 
 /* Style the side navigation list element */
-#sidenav li {
-    margin: 1px 3px;
-}
+#sidenav li { margin: 1px 3px; }
 
 /* Side navigation anchor(link) elements */
 #sidenav a {
@@ -178,9 +168,8 @@ footer {
 }
 
 /* Side navigation anchor(link) elements */
-#sidenav a:link, #sidenav a:visited {
-    color: #466995;
-}
+#sidenav a:link, 
+#sidenav a:visited { color: #466995; }
 
 /* Change on hover */
 #sidenav a:hover {
@@ -217,9 +206,7 @@ footer {
 /* ---------------------------------------------------- */
 
 /* Create three unequal columns that floats next to each other */
-.column {
-    float: left;
-}
+.column { float: left; }
 
 /* Left column, Side Nav */
 .column.left {
@@ -243,23 +230,33 @@ footer {
 }
 
 /* Align headers to center in middle column */
-.middle h2, .middle h3 {
+.middle h2, 
+.middle h3 {
     text-align: center;
     color: #466995;
 }
 
 /* Section elements that are direct children of middle column */
-.column.middle>section {
-    margin: 1em auto;
-}
+.column.middle>section { margin: 1em auto; }
 
 /* Thematic break hr */
-.column.middle > hr, .column.middle section hr {
+.column.middle > hr, 
+.column.middle section hr {
     border: 0;
     height: 2px;
     background-image: linear-gradient(to right, 
     rgba(0,0,0,0), rgb(70,105,149) 30%, 
     rgb(70,105,149) 70%, rgba(0,0,0,0));
+}
+
+/* Media Queries */
+/* makes the three columns stack on top of each other, instead of next to each other */
+@media (max-width: 991px) { /* For medium devices and smaller: */
+    .column.left, 
+    .column.middle, 
+    .column.right { width: 100%; }
+
+    .column.left { display: none; }
 }
 
 /* ---------------------------------------------------- */
@@ -272,21 +269,16 @@ footer {
     display: table;
 }
 
-.clearfix:after {
-    clear: both;
-}
+.clearfix:after { clear: both; }
 
-.clearfix {
-    zoom: 1; /* IE 6/7 */
-}
+.clearfix { zoom: 1; /* IE 6/7 */ }
 
 /* NOTE: If I dont' need to support anything below IE8
 .clearfix:after {
     content: "";
     display: table;
     clear: both;
-}
-*/
+} */
 
 /* ---------------------------------------------------- */
 /* Misc Class Selectors */
@@ -304,21 +296,15 @@ footer {
     display: table;
 }
 
-.inv {
-    display: none;
-}
+.inv { display: none; }
 
-main > section > p {
-    text-indent: 50px;
-}
+main > section > p { text-indent: 50px; }
 
 /* ---------------------------------------------------- */
 /* Image-container */
 /* ---------------------------------------------------- */
 
-.image-container {
-    overflow: hidden;
-}
+.image-container { overflow: hidden; }
 
 .image-container img {
     max-width: 100%;
@@ -342,7 +328,8 @@ main > section > p {
     padding: 0.8em;
 }
 
-.button a:link, .button a:visited {
+.button a:link, 
+.button a:visited {
     display: inline-block;
     font-size: 1.5rem;
     color: #466995; /* rgb(70, 105, 149) */
@@ -358,7 +345,8 @@ main > section > p {
         inset 2px 3px 5px rgba(255,255,255,0.3);
 }
 
-.button a:hover, .button a:active {
+.button a:hover, 
+.button a:active {
     color: white;
     /* background */
     background-color: #466995;
@@ -427,17 +415,12 @@ main > section > p {
     border-top: 2px solid #DBE9EE;
 }
 
-.expand-closed {
-    display: none;
-}
+.expand-closed { display: none; }
 
-.expand-body .media-container h3 {
-    color: #DBE9EE;
-}
+.expand-body 
+.media-container h3 { color: #DBE9EE; }
 
-.expand-container .media-container iframe {
-    border: 2px solid #DBE9EE;
-}
+.expand-container .media-container iframe { border: 2px solid #DBE9EE; }
 
 /* ---------------------------------------------------- */
 /* Unordered List */
@@ -476,60 +459,19 @@ main > section > p {
 /* Social Media Logos */
 /* ---------------------------------------------------- */
 
-#social-media-logos a {
-    display: inline-block;
-}
+#social-media-logos a { display: inline-block; }
 
-#twitter-logo .fa-circle {
-    color: #00B6F1 /* twitter blue */
-}
+#twitter-logo .fa-circle { color: #00B6F1 /* twitter blue */ }
 
-#facebook-logo .fa-circle {
-    color: #3B5998; /* facebook blue */
-}
+#facebook-logo .fa-circle { color: #3B5998; /* facebook blue */ }
 
-#instagram-logo .fa-circle {
-    color: #C32AA3; /* instagram magenta */
-}
+#instagram-logo .fa-circle { color: #C32AA3; /* instagram magenta */ }
 
-#youtube-logo .fa-circle {
-    color: #FF0000; /* youtube red */
-}
+#youtube-logo .fa-circle { color: #FF0000; /* youtube red */ }
 
-#linkedin-logo .fa-circle {
-    color: #007BB5; /* linkedin blue */
-}
+#linkedin-logo .fa-circle { color: #007BB5; /* linkedin blue */ }
 
-#google-logo .fa-circle {
-    color: #DF4A32; /* google+ red */
-}
-
-/* ---------------------------------------------------- */
-/* Responsive Layout */
-/* ---------------------------------------------------- */
-
-/* makes the three columns stack on top of each other, instead of next to each other */
-@media (max-width:800px) {
-    /* For tablet: */
-    .column.left, .column.middle, .column.right {
-        width: 100%;
-    }
-
-    .column.left {
-        display: none;
-    }
-}
-
-@media (max-width:500px) {
-    /* For mobile phones: */
-    .column.left, .column.middle, .column.right {
-        width: 100%;
-    }
-
-    .column.left {
-        display: none;
-    }
-}
+#google-logo .fa-circle { color: #DF4A32; /* google+ red */ }
 
 /* ---------------------------------------------------- */
 /* Responsive Layout II */

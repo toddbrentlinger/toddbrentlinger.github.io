@@ -49,7 +49,7 @@
             border: 0; /* prevent IE9 (and earlier) from displaying a border around the edges */
         }
         
-        #profile-pic + p::after {
+        #profile-pic ~ p:last-child::after {
             content: "";
             clear: both;
             display: table;
@@ -69,7 +69,7 @@
     <!-- Top Navigation -->
     <nav id="topnav">
         <ul>
-            <li><a class="active-page" href="#"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
+            <li><a class="active-page" href="#"><span class="fa fa-home fa-lg fa-fw"></span> Home</a></li>
             <li><a href="../webdev/webdev.html">Web Development</a></li>
             <li><a href="../programming/programming.html">Programming</a></li>
             <li><a href="../engineering/engineering.html">Engineering</a></li>
@@ -110,8 +110,27 @@
 
                 <p>
                     Hello, I'm <strong><em>Todd Brentlinger</em></strong>. Welcome to My Website!<br />
-                    Please forgive the stupid simplicity of this website. I'm using it to
+                    Please forgive the simplicity of this website. I'm using it to
                     learn HTML, CSS, &amp; JavaScript.
+                </p>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+
+                <p>
+                    Praesent ultrices magna vel ex condimentum egestas. Nulla egestas et leo auctor condimentum.
+                    Phasellus euismod orci et tortor hendrerit lacinia. Ut blandit, velit sed tempus ultricies,
+                    nisl arcu ullamcorper neque, ac sodales mi neque nec odio. Phasellus laoreet dolor sit amet
+                    velit dictum, nec laoreet magna fringilla. In eu cursus ex. Sed diam felis, lacinia at facilisis
+                    et, varius non odio. Maecenas elementum congue commodo. Etiam eget dictum metus, eu interdum
+                    ligula. Sed fermentum vitae libero id iaculis. Aliquam a turpis arcu. Suspendisse id dapibus
+                    tellus. Integer non enim eu velit vestibulum volutpat eget nec felis. Pellentesque eros leo,
+                    fringilla sit amet lobortis eu, vestibulum non magna.
                 </p>
 
             </section>
