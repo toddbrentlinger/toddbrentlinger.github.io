@@ -24,14 +24,14 @@
             // if current scroll position is below the topnav position
             if ($(window).scrollTop() > topNavDistance) {
                 // add fixed class to topNav
-                $topNav.addClass('fixed');
+                $topNav.addClass('topnav-fixed');
                 // remove absolute position class from topnav
                 $topNav.removeClass('topnav-absolute');
                 // reset top positioning to 0
                 $topNav.css('top', '0');
             } else {
                 // remove fixed class from topNav
-                $topNav.removeClass('fixed');
+                $topNav.removeClass('topnav-fixed');
                 // add absolute position class to topnav
                 $topNav.addClass('topnav-absolute');
                 // set top of absolute positioned element depending on topNavDistance
