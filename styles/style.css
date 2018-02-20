@@ -340,6 +340,12 @@ main > section > p { text-indent: 50px; }
     border: 3px solid #466995;
     border-radius: 1.3em;
     /* box shadow */
+    -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.4),
+        inset -2px -3px 5px rgba(0,0,0,0.3),
+        inset 2px 3px 5px rgba(255,255,255,0.3);
+    -moz-box-shadow: 5px 5px 10px rgba(0,0,0,0.4),
+        inset -2px -3px 5px rgba(0,0,0,0.3),
+        inset 2px 3px 5px rgba(255,255,255,0.3);
     box-shadow: 5px 5px 10px rgba(0,0,0,0.4),
         inset -2px -3px 5px rgba(0,0,0,0.3),
         inset 2px 3px 5px rgba(255,255,255,0.3);
@@ -356,6 +362,14 @@ main > section > p { text-indent: 50px; }
 
 .button a:active {
     /* box shadow */
+    -webkit-box-shadow: 2px 2px 10px rgba(0,0,0,0.4),
+        inset 2px 3px 2px black,
+        inset 2px 3px 5px rgba(0,0,0,0.8),
+        inset -2px -3px 5px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 2px 2px 10px rgba(0,0,0,0.4),
+        inset 2px 3px 2px black,
+        inset 2px 3px 5px rgba(0,0,0,0.8),
+        inset -2px -3px 5px rgba(255, 255, 255, 0.3);
     box-shadow: 2px 2px 10px rgba(0,0,0,0.4),
         inset 2px 3px 2px black,
         inset 2px 3px 5px rgba(0,0,0,0.8),
@@ -380,6 +394,12 @@ main > section > p { text-indent: 50px; }
     margin: 1em auto;
     background-color: #466995;
     color: #DBE9EE;
+    -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.4),
+        inset -2px -3px 5px rgba(0,0,0,0.3),
+        inset 2px 3px 5px rgba(255,255,255,0.3);
+    -moz-box-shadow: 5px 5px 10px rgba(0,0,0,0.4),
+        inset -2px -3px 5px rgba(0,0,0,0.3),
+        inset 2px 3px 5px rgba(255,255,255,0.3);
     box-shadow: 5px 5px 10px rgba(0,0,0,0.4),
         inset -2px -3px 5px rgba(0,0,0,0.3),
         inset 2px 3px 5px rgba(255,255,255,0.3);
@@ -442,17 +462,28 @@ main > section > p { text-indent: 50px; }
 /* jQuery - Fixed menu after scrolling */
 /* ---------------------------------------------------- */
 
-.fixed {
+.topnav-fixed {
     position: fixed;
     top: 0;
-    z-index: 1;
     width: 100%;
+    z-index: 1;
 }
 
 .topnav-absolute {
     position: absolute;
     width: 100%;
     margin: 0 auto;
+}
+
+.sidenav-fixed {
+    position: fixed;
+    z-index: 1;
+}
+
+.right-col-fixed {
+    position: fixed;
+    right: 0;
+    z-index: 1;
 }
 
 /* ---------------------------------------------------- */
