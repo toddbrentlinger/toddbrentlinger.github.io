@@ -32,7 +32,7 @@
     -->
     <!-- Can put scripts in head section since all jQuery methods in
         the following scripts are inside a jquery document ready function -->
-    <script src="/scripts/fixed-nav-after-scroll.js"></script>
+    <script src="/scripts/sticky-nav.js"></script>
 
     <style>
         /* Profile pic img element */
@@ -48,11 +48,11 @@
             border: 0; /* prevent IE9 (and earlier) from displaying a border around the edges */
         }
 
-            #profile-pic ~ p:last-child::after {
-                content: "";
-                clear: both;
-                display: table;
-            }
+        #profile-pic ~ p:last-child::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
     </style>
 
 </head>
