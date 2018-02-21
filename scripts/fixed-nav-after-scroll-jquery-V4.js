@@ -3,7 +3,7 @@
     // ---------- Fixed top navigation after scrolling ---------- //
     // ---------------------------------------------------------- //
 
-    // Variable: Minimum window width to fix elements
+    // Constant variable: Minimum window width to fix elements
     const minWindowWidth = 500; // px
 
     // Variables:
@@ -107,7 +107,7 @@
 
     // Window scroll event handler: 
     // Run changeTopNav(), changeSideNav(), & changeRightCol() function whenever window scrolls
-    $(window).scroll(function () {
+    $window.scroll(function () {
         changeTopNav();
         changeSideNav();
         changeRightCol();
