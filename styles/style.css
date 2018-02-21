@@ -472,7 +472,6 @@ main > section > p { text-indent: 50px; }
 .topnav-absolute {
     position: absolute;
     width: 100%;
-    margin: 0 auto;
 }
 
 .sidenav-fixed {
@@ -484,6 +483,32 @@ main > section > p { text-indent: 50px; }
     position: fixed;
     right: 0;
     z-index: 1;
+}
+
+/* Absolute position class for left column, sidenav, and right column, aside */
+.col-absolute {
+    position: absolute;
+}
+
+.main-absolute {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/* ---------------------------------------------------- */
+/* Sticky menu after scrolling */
+/* ---------------------------------------------------- */
+
+.topnav-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.side-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    /* top value set using javascript */
 }
 
 /* ---------------------------------------------------- */
