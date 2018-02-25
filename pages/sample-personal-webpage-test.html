@@ -6,14 +6,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sample Webpage | Todd Brentlinger's Website</title>
+    <title>Todd Brentlinger's Website</title>
 
     <!-- Stylesheets -->
     <!--
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
      -->
-    <link rel="stylesheet" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+    <link rel="stylesheet" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
 
     <meta name="author" content="Todd Brentlinger" />
 
@@ -21,35 +21,66 @@
         keywords relating to the webpage to optimize Search Engine Optimization (SEO) -->
     <meta name="description" content="Todd Brentlinger's personal website" />
 
-    <!-- Facebook Metadata -->
-    <meta property="og:image" content="" />
-    <meta property="og:description" content="Todd Brentlinger's personal website" />
-    <meta property="og:title" content="Sample Webpage | Todd Brentlinger's Website" />
-
-    <!-- Twitter -->
-    <!-- Custom Favicon (.ico format ensure it works back to IE6) -->
-    <link rel="shortcut icon" href="" type="image/x-icon" />
-
-    <!-- jQuery script
-    <script src="../scripts/jQuery/jquery-3.2.1.min.js"></script> -->
-    <!-- Google CDN for jQuery -->
+    <!-- jQuery script -->
+    <script src="/scripts/jQuery/jquery-3.2.1.min.js"></script>
+    <!-- Google CDN for jQuery
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--Many users already have downloaded jQuery from Google or Microsoft when visiting another site.
+    Many users already have downloaded jQuery from Google or Microsoft when visiting another site.
     As a result, it will be loaded from cache when they visit your site, which leads to faster
     loading time. Also, most CDN's will make sure that once a user requests a file from it, it
-    will be served from the server closest to them, which also leads to faster loading time.-->
+    will be served from the server closest to them, which also leads to faster loading time.
+    -->
+    <!-- Can put scripts in head section since all jQuery methods in
+        the following scripts are inside a jquery document ready function -->
+    <script src="/scripts/sticky-nav.js"></script>
 
     <style>
+        /* Profile pic img element */
 
-        #topnav {
-            position: sticky;
-            top: 0;
+        #profile-pic {
+            float: left;
+            margin: 0 1em 1em 0;
+            min-width: 220px;
+            max-width: 960px;
+            width: 30%;
+            height: auto;
+            display: block;
+            border: 0; /* prevent IE9 (and earlier) from displaying a border around the edges */
         }
 
-        .column.right, .column.left {
-            position: sticky;
-            top: 51px;
+        #profile-pic ~ p:last-child::after {
+            content: "";
+            clear: both;
+            display: table;
         }
+
+        /* Dropdown */
+
+        #topnav a:hover, 
+        #topnav a:active,
+        #topnav .dropdown:hover .dropdown-btn,
+        #topnav .dropdown:active .dropdown-btn {
+            background-color: #466995;
+            color: white;
+        }
+
+        #topnav > ul > li.dropdown { display: inline-block; }
+
+        #topnav > ul > li.dropdown > .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #DBE9EE;
+            min-width: 160px;
+            border: 2px solid #466995;
+            z-index: 1;
+        }
+
+        #topnav > ul > li.dropdown > .dropdown-content > a { display: block; }
+
+        #topnav > ul > li.dropdown > .dropdown-content > a:hover { }
+
+        /* When dropdown is hovered over, display dropdown content */
+        #topnav > ul > li.dropdown:hover > .dropdown-content { display: block; }
 
     </style>
 
@@ -59,19 +90,26 @@
 
     <!-- Header -->
     <header>
-        <h1>Sample Webpage</h1>
+        <h1>Todd Brentlinger's Website</h1>
     </header>
 
     <!-- Top Navigation -->
     <nav id="topnav">
         <ul>
-            <li><a href="../index.html"><span class="fa fa-home fa-lg fa-fw"></span>Home</a></li>
-            <li><a class="active-page" href="../webdev/webdev.html">Web Development</a></li>
-            <li><a href="../programming/programming.html">Programming</a></li>
-            <li><a href="../engineering/engineering.html">Engineering</a></li>
+            <li><a class="active-page" href="#"><span class="fa fa-home fa-lg fa-fw"></span> Home</a></li>
+
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-btn">Professional</a>
+                <div class="dropdown-content">
+                    <a href="../webdev/webdev.html">Web Development</a>
+                    <a href="../programming/programming.html">Programming</a>
+                    <a href="../engineering/engineering.html">Engineering</a>
+                </div>
+            </li>
+
             <li><a href="../personal/personal.html">Personal</a></li>
             <li><a href="../blog/blog.html">Blog</a></li>
-            <li><a href="../bond/bond-rank.html">James Bond</a></li>
+            <li><a href="../bond/bond-rank.html">Bond</a></li>
         </ul>
     </nav>
 
@@ -81,9 +119,8 @@
         <nav id="sidenav" class="column left">
             <!-- nav/aside/div element? -->
             <ul>
-                <li><a href="#section1">[Side Nav 1]</a></li>
-                <li><a href="#section2">[Side Nav 2]</a></li>
-                <li><a href="#section3">[Side Nav 3]</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
 
         </nav>
@@ -91,7 +128,93 @@
         <!-- Middle Column -->
         <main class="column middle">
 
-            <section id="section1">
+            <section>
+
+                <h2>Hello World!</h2>
+
+                <img id="profile-pic"
+                     srcset="../images/todd-brentlinger-profile-250w.jpg 250w,
+                             ../images/todd-brentlinger-profile-480w.jpg 480w,
+                             ../images/todd-brentlinger-profile-pic.jpg 960w"
+                     sizes="(max-width: 550px) 250px,
+                            (max-width: 1600px) 480px,
+                            960px"
+                     src="../images/todd-brentlinger-profile-480w.jpg"
+                     alt="Profile picture of me, Todd Brentlinger" />
+
+                <p>
+                    Hello, I'm <strong><em>Todd Brentlinger</em></strong>. Welcome to My Website!<br />
+                    Please forgive the simplicity of this website. I'm using it to
+                    learn HTML, CSS, &amp; JavaScript.
+                </p>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+
+                <p>
+                    Praesent ultrices magna vel ex condimentum egestas. Nulla egestas et leo auctor condimentum.
+                    Phasellus euismod orci et tortor hendrerit lacinia. Ut blandit, velit sed tempus ultricies,
+                    nisl arcu ullamcorper neque, ac sodales mi neque nec odio. Phasellus laoreet dolor sit amet
+                    velit dictum, nec laoreet magna fringilla. In eu cursus ex. Sed diam felis, lacinia at facilisis
+                    et, varius non odio. Maecenas elementum congue commodo. Etiam eget dictum metus, eu interdum
+                    ligula. Sed fermentum vitae libero id iaculis. Aliquam a turpis arcu. Suspendisse id dapibus
+                    tellus. Integer non enim eu velit vestibulum volutpat eget nec felis. Pellentesque eros leo,
+                    fringilla sit amet lobortis eu, vestibulum non magna.
+                </p>
+
+            </section>
+
+            <hr />
+
+            <section id="about">
+
+                <h2 title="I'm a tooltip">About</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+
+                <p>
+                    Praesent ultrices magna vel ex condimentum egestas. Nulla egestas et leo auctor condimentum.
+                    Phasellus euismod orci et tortor hendrerit lacinia. Ut blandit, velit sed tempus ultricies,
+                    nisl arcu ullamcorper neque, ac sodales mi neque nec odio. Phasellus laoreet dolor sit amet
+                    velit dictum, nec laoreet magna fringilla. In eu cursus ex. Sed diam felis, lacinia at facilisis
+                    et, varius non odio. Maecenas elementum congue commodo. Etiam eget dictum metus, eu interdum
+                    ligula. Sed fermentum vitae libero id iaculis. Aliquam a turpis arcu. Suspendisse id dapibus
+                    tellus. Integer non enim eu velit vestibulum volutpat eget nec felis. Pellentesque eros leo,
+                    fringilla sit amet lobortis eu, vestibulum non magna.
+                </p>
+
+            </section>
+
+            <hr />
+
+            <section id="contact">
+
+                <h2>Contact</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+
+            </section>
+
+            <hr />
+
+            <section>
 
                 <h2>Test Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum non dui ac facilisis. Praesent cursus luctus mi tristique venenatis. Nulla condimentum vestibulum eros, nec porttitor ipsum mattis non. Maecenas gravida nec tortor nec aliquet. Maecenas nec vulputate velit. Aenean ornare eu tellus in sollicitudin. Vivamus dolor risus, dictum sit amet mauris quis, faucibus feugiat odio. Nam lorem turpis, luctus ut ex et, luctus molestie lorem. Donec vestibulum, lectus ut facilisis convallis, libero massa dictum libero, eu porttitor est libero at felis. Donec non velit et dui mattis mattis nec sed quam. Nullam congue ipsum tellus, sit amet iaculis urna sollicitudin non. Aliquam imperdiet quam sed volutpat vestibulum. Morbi suscipit molestie ligula, eget dictum dui convallis commodo.</p>
@@ -114,30 +237,7 @@
 
             <hr />
 
-            <section id="section2">
-
-                <h2>Test Title</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum non dui ac facilisis. Praesent cursus luctus mi tristique venenatis. Nulla condimentum vestibulum eros, nec porttitor ipsum mattis non. Maecenas gravida nec tortor nec aliquet. Maecenas nec vulputate velit. Aenean ornare eu tellus in sollicitudin. Vivamus dolor risus, dictum sit amet mauris quis, faucibus feugiat odio. Nam lorem turpis, luctus ut ex et, luctus molestie lorem. Donec vestibulum, lectus ut facilisis convallis, libero massa dictum libero, eu porttitor est libero at felis. Donec non velit et dui mattis mattis nec sed quam. Nullam congue ipsum tellus, sit amet iaculis urna sollicitudin non. Aliquam imperdiet quam sed volutpat vestibulum. Morbi suscipit molestie ligula, eget dictum dui convallis commodo.</p>
-                <hr />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum non dui ac facilisis. Praesent cursus luctus mi tristique venenatis. Nulla condimentum vestibulum eros, nec porttitor ipsum mattis non. Maecenas gravida nec tortor nec aliquet. Maecenas nec vulputate velit. Aenean ornare eu tellus in sollicitudin. Vivamus dolor risus, dictum sit amet mauris quis, faucibus feugiat odio. Nam lorem turpis, luctus ut ex et, luctus molestie lorem. Donec vestibulum, lectus ut facilisis convallis, libero massa dictum libero, eu porttitor est libero at felis. Donec non velit et dui mattis mattis nec sed quam. Nullam congue ipsum tellus, sit amet iaculis urna sollicitudin non. Aliquam imperdiet quam sed volutpat vestibulum. Morbi suscipit molestie ligula, eget dictum dui convallis commodo. </p>
-                <p>Praesent ultrices magna vel ex condimentum egestas. Nulla egestas et leo auctor condimentum. Phasellus euismod orci et tortor hendrerit lacinia. Ut blandit, velit sed tempus ultricies, nisl arcu ullamcorper neque, ac sodales mi neque nec odio. Phasellus laoreet dolor sit amet velit dictum, nec laoreet magna fringilla. In eu cursus ex. Sed diam felis, lacinia at facilisis et, varius non odio. Maecenas elementum congue commodo. Etiam eget dictum metus, eu interdum ligula. Sed fermentum vitae libero id iaculis. Aliquam a turpis arcu. Suspendisse id dapibus tellus. Integer non enim eu velit vestibulum volutpat eget nec felis. Pellentesque eros leo, fringilla sit amet lobortis eu, vestibulum non magna. </p>
-                <hr />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum non dui ac facilisis. Praesent cursus luctus mi tristique venenatis. Nulla condimentum vestibulum eros, nec porttitor ipsum mattis non. Maecenas gravida nec tortor nec aliquet. Maecenas nec vulputate velit. Aenean ornare eu tellus in sollicitudin. Vivamus dolor risus, dictum sit amet mauris quis, faucibus feugiat odio. Nam lorem turpis, luctus ut ex et, luctus molestie lorem. Donec vestibulum, lectus ut facilisis convallis, libero massa dictum libero, eu porttitor est libero at felis. Donec non velit et dui mattis mattis nec sed quam. Nullam congue ipsum tellus, sit amet iaculis urna sollicitudin non. Aliquam imperdiet quam sed volutpat vestibulum. Morbi suscipit molestie ligula, eget dictum dui convallis commodo.</p>
-                <p>Praesent ultrices magna vel ex condimentum egestas. Nulla egestas et leo auctor condimentum. Phasellus euismod orci et tortor hendrerit lacinia. Ut blandit, velit sed tempus ultricies, nisl arcu ullamcorper neque, ac sodales mi neque nec odio. Phasellus laoreet dolor sit amet velit dictum, nec laoreet magna fringilla. In eu cursus ex. Sed diam felis, lacinia at facilisis et, varius non odio. Maecenas elementum congue commodo. Etiam eget dictum metus, eu interdum ligula. Sed fermentum vitae libero id iaculis. Aliquam a turpis arcu. Suspendisse id dapibus tellus. Integer non enim eu velit vestibulum volutpat eget nec felis. Pellentesque eros leo, fringilla sit amet lobortis eu, vestibulum non magna. </p>
-                <hr />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum non dui ac facilisis. Praesent cursus luctus mi tristique venenatis. Nulla condimentum vestibulum eros, nec porttitor ipsum mattis non. Maecenas gravida nec tortor nec aliquet. Maecenas nec vulputate velit. Aenean ornare eu tellus in sollicitudin. Vivamus dolor risus, dictum sit amet mauris quis, faucibus feugiat odio. Nam lorem turpis, luctus ut ex et, luctus molestie lorem. Donec vestibulum, lectus ut facilisis convallis, libero massa dictum libero, eu porttitor est libero at felis. Donec non velit et dui mattis mattis nec sed quam. Nullam congue ipsum tellus, sit amet iaculis urna sollicitudin non. Aliquam imperdiet quam sed volutpat vestibulum. Morbi suscipit molestie ligula, eget dictum dui convallis commodo.</p>
-                <hr />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum non dui ac facilisis. Praesent cursus luctus mi tristique venenatis. Nulla condimentum vestibulum eros, nec porttitor ipsum mattis non. Maecenas gravida nec tortor nec aliquet. Maecenas nec vulputate velit. Aenean ornare eu tellus in sollicitudin. Vivamus dolor risus, dictum sit amet mauris quis, faucibus feugiat odio. Nam lorem turpis, luctus ut ex et, luctus molestie lorem. Donec vestibulum, lectus ut facilisis convallis, libero massa dictum libero, eu porttitor est libero at felis. Donec non velit et dui mattis mattis nec sed quam. Nullam congue ipsum tellus, sit amet iaculis urna sollicitudin non. Aliquam imperdiet quam sed volutpat vestibulum. Morbi suscipit molestie ligula, eget dictum dui convallis commodo. </p>
-                <p>Praesent ultrices magna vel ex condimentum egestas. Nulla egestas et leo auctor condimentum. Phasellus euismod orci et tortor hendrerit lacinia. Ut blandit, velit sed tempus ultricies, nisl arcu ullamcorper neque, ac sodales mi neque nec odio. Phasellus laoreet dolor sit amet velit dictum, nec laoreet magna fringilla. In eu cursus ex. Sed diam felis, lacinia at facilisis et, varius non odio. Maecenas elementum congue commodo. Etiam eget dictum metus, eu interdum ligula. Sed fermentum vitae libero id iaculis. Aliquam a turpis arcu. Suspendisse id dapibus tellus. Integer non enim eu velit vestibulum volutpat eget nec felis. Pellentesque eros leo, fringilla sit amet lobortis eu, vestibulum non magna. </p>
-                <hr />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum non dui ac facilisis. Praesent cursus luctus mi tristique venenatis. Nulla condimentum vestibulum eros, nec porttitor ipsum mattis non. Maecenas gravida nec tortor nec aliquet. Maecenas nec vulputate velit. Aenean ornare eu tellus in sollicitudin. Vivamus dolor risus, dictum sit amet mauris quis, faucibus feugiat odio. Nam lorem turpis, luctus ut ex et, luctus molestie lorem. Donec vestibulum, lectus ut facilisis convallis, libero massa dictum libero, eu porttitor est libero at felis. Donec non velit et dui mattis mattis nec sed quam. Nullam congue ipsum tellus, sit amet iaculis urna sollicitudin non. Aliquam imperdiet quam sed volutpat vestibulum. Morbi suscipit molestie ligula, eget dictum dui convallis commodo.</p>
-                <p>Praesent ultrices magna vel ex condimentum egestas. Nulla egestas et leo auctor condimentum. Phasellus euismod orci et tortor hendrerit lacinia. Ut blandit, velit sed tempus ultricies, nisl arcu ullamcorper neque, ac sodales mi neque nec odio. Phasellus laoreet dolor sit amet velit dictum, nec laoreet magna fringilla. In eu cursus ex. Sed diam felis, lacinia at facilisis et, varius non odio. Maecenas elementum congue commodo. Etiam eget dictum metus, eu interdum ligula. Sed fermentum vitae libero id iaculis. Aliquam a turpis arcu. Suspendisse id dapibus tellus. Integer non enim eu velit vestibulum volutpat eget nec felis. Pellentesque eros leo, fringilla sit amet lobortis eu, vestibulum non magna. </p>
-
-            </section>
-
-            <hr />
-
-            <section id="section3">
+            <section>
 
                 <h2>Test Title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum non dui ac facilisis. Praesent cursus luctus mi tristique venenatis. Nulla condimentum vestibulum eros, nec porttitor ipsum mattis non. Maecenas gravida nec tortor nec aliquet. Maecenas nec vulputate velit. Aenean ornare eu tellus in sollicitudin. Vivamus dolor risus, dictum sit amet mauris quis, faucibus feugiat odio. Nam lorem turpis, luctus ut ex et, luctus molestie lorem. Donec vestibulum, lectus ut facilisis convallis, libero massa dictum libero, eu porttitor est libero at felis. Donec non velit et dui mattis mattis nec sed quam. Nullam congue ipsum tellus, sit amet iaculis urna sollicitudin non. Aliquam imperdiet quam sed volutpat vestibulum. Morbi suscipit molestie ligula, eget dictum dui convallis commodo.</p>

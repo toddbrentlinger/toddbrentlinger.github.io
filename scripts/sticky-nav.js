@@ -20,8 +20,11 @@
         windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         // If window width is larger than minimum window width
         if (windowWidth > minWindowWidth) {
+            // Variables: main and header element size and its position relative to the viewport; used to set topOffset
+            var mainRect = document.querySelector("body > .row > main").getBoundingClientRect(),
+                headerRect = document.querySelector("body > header").getBoundingClientRect();
             // Set variable for topOffset used to position sticky sideNav and leftAside
-            topOffset = topNav.getBoundingClientRect().height
+            topOffset = mainRect.top - headerRect.bottom;
             // Add sticky class to topNav, sideNav, and leftAside
             topNav.classList.add("topnav-sticky");
             sideNav.classList.add("side-sticky");
@@ -43,6 +46,6 @@
     // Call setUpNav() when document is ready
     setUpNav();
 
-    // Window resize Event Listener
+    // Window Resize Event Listener: Call setUpNav() function
     window.addEventListener("resize", setUpNav);
 };

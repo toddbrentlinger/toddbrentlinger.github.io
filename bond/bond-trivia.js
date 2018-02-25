@@ -15,7 +15,7 @@ function Trivia(question, answer, wrongChoices) {
 
 // array of trivia objects
 // new Trivia(questionString, answerString, wrongChoicesArray)
-var bondTriviaOptions = [
+const bondTriviaOptions = [
     new Trivia('Who was the first actor to play James Bond in a theatrical film?', 'Sean Connery', ['Roger Moore', 'George Lazenby', 'Barry Nelson']),
     new Trivia('Who was the second actor to play James Bond in a theatrical film?', 'George Lazenby', ['Roger Moore', 'Sean Connery', 'Barry Nelson']),
     new Trivia('The James Bond movies are based on a series of novels by what British author?', 'Ian Fleming', ['Ian Gold', 'Peter Finch', 'Peter James']),

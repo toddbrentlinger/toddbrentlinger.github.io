@@ -22,22 +22,22 @@
             display: table;
         }
 
-        #profile-pic + p {
-            text-indent: 50px;
-        }
+        #profile-pic + p {  text-indent: 50px; }
         
-        p {
-            font-size: 1.2em;
-        }
+        p { font-size: 1.2em; }
+
+        h1 { text-align: center; }
     </style>
 
 </head>
 <body>
-    <h2>Responsive Image</h2>
+    <h1>Responsive Image</h1>
 
-    <p id="img-source"></p>
-    <p id="img-width"></p>
-    <p id="window-width"></p>
+    <section id="doc-properties">
+        <p id="img-source"></p>
+        <p id="img-width"></p>
+        <p id="window-width"></p>
+    </section>
 
     <img id="profile-pic"
          srcset="../images/todd-brentlinger-profile-250w.jpg 250w,
@@ -58,18 +58,31 @@
     </p>
 
     <script>
-        var source = document.getElementById('img-source'),
-            imgWidth = document.getElementById('img-width'),
-            windowWidth = document.getElementById('window-width'),
-            image = document.getElementById('profile-pic');
+        var image = document.getElementById("profile-pic"),
+            docProps = document.getElementById("doc-properties");
+
+        function addDocProp() {
+            return docProps.appendChild(document.createElement("p"));
+        }
+
+        var currSource = addDocProp(),
+            source = addDocProp(),
+            width = addDocProp(),
+            naturalWidth = addDocProp(),
+            windowWidth = addDocProp();
 
         function ChangeData() {
-            source.textContent = 'Image Source: ' + image.currentSrc;
-            imgWidth.textContent = 'Image Width: ' + image.width;
-            windowWidth.textContent = 'Window Width: ' + window.innerWidth;
+            currSource.textContent = "Image currentSource: " + image.currentSrc;
+            source.textContent = "Image source: " + image.src;
+            width.textContent = "Image width: " + image.width;
+            naturalWidth.textContent = "Image naturalWidth: " + image.naturalWidth;
+            windowWidth.textContent = "Window innerWidth: " + window.innerWidth;
         };
-        ChangeData();
 
+        // When image loads, run ChangeData() to get initial values
+        image.onload = ChangeData;
+
+        // When window resizes, run ChangeData() to get new values
         window.onresize = ChangeData;
     </script>
 </body>
