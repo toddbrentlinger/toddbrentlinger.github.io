@@ -175,20 +175,16 @@
             }
         }
 
-        #mdn-web-dev .button {
-            width: 100%;
-        }
+        #mdn-web-dev .button { width: 100%; }
 
         /* Misc Web Dev Examples */
 
-        #misc-examples .flex-container {
+        .flex-container {
             display: flex;
             flex-flow: row wrap;
         }
 
-        .flex-container > .button {
-            flex: 30%;
-        }
+        .flex-container > .button { flex: 30%; }
 
         .flex-container > .button > a {
             display: block;
@@ -331,110 +327,122 @@
 
                 <h2>MDN: Learn Web Development</h2>
 
-                <!-- MDN: JavaScript Exercises -->
-                <section id="mdn-java">
+                <!-- MDN Exercises - Tab container -->
+                <div class="tab-container">
 
-                    <h3>JavaScript</h3>
-
-                    <div class="button">
-                        <a href="javascipt/image-gallery/index.html">JS Assessment: Image Gallery</a>
+                    <!-- Tab links -->
+                    <div class="tab">
+                        <button class="tab-links" onclick="openTab(event, 'JavaScript')" id="default-open-tab">JavaScript</button>
+                        <button class="tab-links" onclick="openTab(event, 'CSS')">CSS</button>
+                        <button class="tab-links" onclick="openTab(event, 'HTML')">HTML</button>
                     </div>
 
-                    <div class="button">
-                        <a href="javascipt/random-canvas-circles.html">Random Canvas Circles</a>
+                    <!-- JavaScript Exercises - Tab content -->
+                    <div id="JavaScript" class="tab-content">
+
+                        <h3>JavaScript</h3>
+
+                        <div class="button">
+                            <a href="javascipt/image-gallery/index.html">JS Assessment: Image Gallery</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="javascipt/random-canvas-circles.html">Random Canvas Circles</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="javascipt/function-examples.html">Function Example: Display Message Box</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="javascipt/object-oriented-js-example.html">Object Oriented JS Example</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="javascipt/oojs-class-inheritance.html">Object Oriented JS: Class Inheritance</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="javascipt/json-example.html">JSON Example</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="javascipt/bouncing-balls/index.html">Object Oriented JS: Bouncing Balls</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="javascipt/bouncing-balls-V2/index.html">Object Oriented JS: Bouncing Balls V2</a>
+                        </div>
+
                     </div>
 
-                    <div class="button">
-                        <a href="javascipt/function-examples.html">Function Example: Display Message Box</a>
+                    <!-- CSS Exercises - Tab content -->
+                    <div id="CSS" class="tab-content">
+
+                        <h3>CSS</h3>
+
+                        <div class="button">
+                            <a href="css/css-fundamental-comprehension.html">CSS Assessment: Fundamental Comprehension</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="css/css-typesetting-a-homepage.html">CSS Assessment: Typesetting a Homepage</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="css/fancy-letterhead/fancy-letterhead.html">CSS Assessment: Creating Fancy Letterhead</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="css/layout-examples.html">CSS Layout Examples</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="css/flexbox-examples.html">CSS Flexbox Examples</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="css/simple-grid-example.html">CSS Simple Grid Example</a>
+                        </div>
+
                     </div>
 
-                    <div class="button">
-                        <a href="javascipt/object-oriented-js-example.html">Object Oriented JS Example</a>
+                    <!-- HTML Exercises - Tab content -->
+                    <div id="HTML" class="tab-content">
+
+                        <h3>HTML</h3>
+
+                        <div class="button">
+                            <a href="html/html-marking-up-a-letter.html">HTML Assessment: Marking Up a Letter</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="html/mozilla-splash-page/mozilla-splash-page.html">HTML Assessment: Mozilla Splash Page</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="html/html-assessment-structuring-planet-data/html-assessment-structuring-planet-data.html">HTML Assessment: Structuring Planet Data</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="html/html-school-timetable.html">HTML: School Timetable</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="html/html-tables-scope-attributes.html">HTML: Tables - Scope Attributes</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="html/html-tables-id-headers-attributes.html">HTML: Tables - ID/Headers Attributes</a>
+                        </div>
+
+                        <div class="button">
+                            <a href="html/html-form-structure.html">HTML Form Structure</a>
+                        </div>
+
                     </div>
 
-                    <div class="button">
-                        <a href="javascipt/oojs-class-inheritance.html">Object Oriented JS: Class Inheritance</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="javascipt/json-example.html">JSON Example</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="javascipt/bouncing-balls/index.html">Object Oriented JS: Bouncing Balls</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="javascipt/bouncing-balls-V2/index.html">Object Oriented JS: Bouncing Balls V2</a>
-                    </div>
-
-                </section>
-
-                <!-- MDN: CSS Exercises -->
-                <section id="mdn-css">
-
-                    <h3>CSS</h3>
-
-                    <div class="button">
-                        <a href="css/css-fundamental-comprehension.html">CSS Assessment: Fundamental Comprehension</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="css/css-typesetting-a-homepage.html">CSS Assessment: Typesetting a Homepage</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="css/fancy-letterhead/fancy-letterhead.html">CSS Assessment: Creating Fancy Letterhead</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="css/layout-examples.html">CSS Layout Examples</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="css/flexbox-examples.html">CSS Flexbox Examples</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="css/simple-grid-example.html">CSS Simple Grid Example</a>
-                    </div>
-
-                </section>
-
-                <!-- MDN: HTML Exercises -->
-                <section id="mdn-html">
-
-                    <h3>HTML</h3>
-
-                    <div class="button">
-                        <a href="html/html-marking-up-a-letter.html">HTML Assessment: Marking Up a Letter</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="html/mozilla-splash-page/mozilla-splash-page.html">HTML Assessment: Mozilla Splash Page</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="html/html-assessment-structuring-planet-data/html-assessment-structuring-planet-data.html">HTML Assessment: Structuring Planet Data</a>
-                    </div>
-                    
-                    <div class="button">
-                        <a href="html/html-school-timetable.html">HTML: School Timetable</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="html/html-tables-scope-attributes.html">HTML: Tables - Scope Attributes</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="html/html-tables-id-headers-attributes.html">HTML: Tables - ID/Headers Attributes</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="html/html-form-structure.html">HTML Form Structure</a>
-                    </div>
-                
-                </section>
+                </div>
 
             </section>
 
@@ -579,6 +587,7 @@
                 <h2>Misc Examples</h2>
 
                 <div class="flex-container">
+
                     <!-- Sample Button CSS -->
                     <div class="button">
                         <a href="#misc-examples">Sample Button</a>
@@ -598,10 +607,6 @@
 
                     <div class="button">
                         <a href="../bond/bond-trivia.html">James Bond Trivia</a>
-                    </div>
-
-                    <div class="button">
-                        <a href="../pages/sample-personal-webpage.html">Sample Personal Webpage - Sticky</a>
                     </div>
 
                     <div class="button">
@@ -633,8 +638,21 @@
                     </div>
 
                     <div class="button">
-                        <a href="../pages/sample-personal-webpage-sticky.html">Sample Personal Webpage - Sticky V2</a>
+                        <a href="../pages/sample-personal-webpage-sticky.html">Sample Personal Webpage - Sticky</a>
                     </div>
+
+                    <div class="button">
+                        <a href="../pages/sample-personal-webpage-sticky-V2.html">Sample Personal Webpage - Sticky V2</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="../pages/sample-personal-webpage-test.html">Sample Personal Webpage - Test</a>
+                    </div>
+
+                    <div class="button">
+                        <a href="../pages/website-tabs-test.html">Website Tabs - Test</a>
+                    </div>
+
                 </div>
             
             </section>
@@ -738,6 +756,8 @@
     <script src="../scripts/date-time.js"></script>
     <script src="../scripts/function-library-example.js"></script>
     <script src="../scripts/event-handler-examples.js"></script>
+
+    <script src="../scripts/tabs-container.js"></script>
 
 </body>
 
