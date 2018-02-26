@@ -1,4 +1,7 @@
 ﻿window.onload = function () {
+
+    // Top Nav
+
     // Constant Variable: Minimum window width to stick elements
     const minWindowWidth = 500; // px
 
@@ -14,7 +17,7 @@
         topOffset,
         windowWidth;
 
-    // Function: Set up elements from static to sticky
+    // Function: Set up elements from static to absolute
     function setUpNav() {
         // Set windowWidth
         windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -43,9 +46,4 @@
         }
     }
 
-    // Call setUpNav() when document is ready
-    setUpNav();
-
-    // Window Resize Event Listener: Call setUpNav() function
-    window.addEventListener("resize", setUpNav);
 };
